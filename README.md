@@ -1,2 +1,2 @@
 # StudyBuddy
-A game that motivates to study
+A game that motivates you to study
