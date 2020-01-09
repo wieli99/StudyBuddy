@@ -10,9 +10,6 @@ class Shop : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.shop)
 
-        //backbutton in actionbar
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
         var button = findViewById<Button>(R.id.button)
         var button2 = findViewById<Button>(R.id.button2)
         var button3 = findViewById<Button>(R.id.button3)
@@ -47,7 +44,7 @@ class Shop : AppCompatActivity() {
 
 
     fun setButtonText(btn: Button){
-        btn.text = "purchased"
+        btn.text = getString(R.string.Purchased)
     }
 
 

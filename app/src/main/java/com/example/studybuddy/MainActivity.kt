@@ -1,5 +1,6 @@
 package com.example.studybuddy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
@@ -7,6 +8,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.Chronometer
 import android.widget.EditText
+import android.widget.ImageView
 import com.example.studybuddy.R
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +20,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val btnPause =  findViewById<Button>(R.id.PauseButton)
         val btnStart =  findViewById<Button>(R.id.StartButton)
+
+        val btn = findViewById<ImageView>(R.id.ShoppingCart)
+
+        //To Navigate To Shop
+        btn.setOnClickListener{
+            val intent = Intent(this, Shop::class.java)
+            startActivity(intent)
+        }
+
+
+
+
+
+
 
 
 
