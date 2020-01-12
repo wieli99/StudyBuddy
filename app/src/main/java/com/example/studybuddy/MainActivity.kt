@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
 
         var lastPause: Long = SystemClock.elapsedRealtime()
-        var isPaused: Boolean = false
+        var isPaused = false
         val timer = findViewById<Chronometer>(R.id.simpleChronometer)
 
         timer.setCountDown(true)
@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
             timer.setBase(SystemClock.elapsedRealtime() + timeMilliSeconds)
             timer.start()
             btnStart.setText(getString(R.string.Restart))
+            btnPause.setText(getString(R.string.Pause))
         }
 
         btnPause.setOnClickListener{
@@ -57,21 +58,21 @@ class MainActivity : AppCompatActivity() {
                 isPaused = true
                 btnPause.setText(getString(R.string.Resume))
             } else if (!reachedZero) {
-                timer.setBase(timer.getBase() + SystemClock.elapsedRealtime() - lastPause);
+                timer.setBase(timer.getBase() + SystemClock.elapsedRealtime() - lastPause)
                 isPaused = false
-                timer.start();
+                timer.start()
                 btnPause.setText(getString(R.string.Pause))
             }
         }
 
         timer.setOnChronometerTickListener {
-            testZero(timer, lastPause, btnStart)
+            testZero(timer, btnStart)
             money += 1
             Log.i("money", money.toString())
         }
     }
 
-    fun testZero(timer: Chronometer, lastPause: Long, btnStart: Button){
+    fun testZero(timer: Chronometer, btnStart: Button){
         Log.i("timeLeft", (timer.getBase() - SystemClock.elapsedRealtime()).toString())
         if (timer.getBase() - SystemClock.elapsedRealtime() <= 0){
             reachedZero = true
