@@ -5,11 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
 import android.util.Log
-import android.widget.Button
-import android.widget.Chronometer
-import android.widget.EditText
-import android.widget.ImageView
-import com.example.studybuddy.R
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
     var reachedZero: Boolean = false
@@ -44,10 +40,11 @@ class MainActivity : AppCompatActivity() {
         timer.setCountDown(true)
 
         btnStart.setOnClickListener{
-            val timeMilliSeconds = 25 * 60 * 1000 //25 Min
+            val timeMilliSeconds = 1 * 60 * 1000 //25 Min
             timer.setBase(SystemClock.elapsedRealtime() + timeMilliSeconds)
             timer.start()
             btnStart.setText(getString(R.string.Restart))
+            isPaused = false
             btnPause.setText(getString(R.string.Pause))
         }
 
@@ -78,6 +75,8 @@ class MainActivity : AppCompatActivity() {
             reachedZero = true
             timer.stop()
             btnStart.setText(getString(R.string.Start))
+            Toast.makeText(this@MainActivity, "You should now take a short brake!", Toast.LENGTH_LONG).show()
+
         }
     }
 }
