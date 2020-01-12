@@ -10,6 +10,7 @@ import android.widget.*
 class MainActivity : AppCompatActivity() {
     var reachedZero: Boolean = false
     var money = 0
+    var moneyEveryTenSeconds = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity() {
             btnStart.setText(getString(R.string.Restart))
             isPaused = false
             btnPause.setText(getString(R.string.Pause))
+            moneyEveryTenSeconds = 0
         }
 
         btnPause.setOnClickListener{
@@ -64,7 +66,12 @@ class MainActivity : AppCompatActivity() {
 
         timer.setOnChronometerTickListener {
             testZero(timer, btnStart)
-            money += 1
+            moneyEveryTenSeconds += 1
+            if (moneyEveryTenSeconds == 10){
+                moneyEveryTenSeconds = 0
+                money += 1
+                findViewById<TextView>(R.id.Money).setText(money.toString()+"c")
+            }
             Log.i("money", money.toString())
         }
     }
