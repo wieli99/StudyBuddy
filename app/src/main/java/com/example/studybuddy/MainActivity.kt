@@ -1,6 +1,8 @@
 package com.example.studybuddy
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
@@ -10,7 +12,7 @@ import android.widget.*
 class MainActivity : AppCompatActivity() {
     var reachedZero: Boolean = false
     var money = 0
-    var moneyEveryTenSeconds = 0;
+    var moneyEveryTenSeconds = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +21,13 @@ class MainActivity : AppCompatActivity() {
         val btnStart =  findViewById<Button>(R.id.StartButton)
 
         val btn = findViewById<ImageView>(R.id.ShoppingCart)
+
+
+        val sharedPref = this@MainActivity.getPreferences(Context.MODE_PRIVATE)
+        money = sharedPref.getInt("Money", 0)
+
+        //Set correct Money on startup to textView
+        findViewById<TextView>(R.id.Money).setText(sharedPref.getInt("Money", 1).toString() + "c")
 
         //To Navigate To Shop
         btn.setOnClickListener{
@@ -41,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         timer.setCountDown(true)
 
         btnStart.setOnClickListener{
-            val timeMilliSeconds = 1 * 60 * 1000 //25 Min
+            val timeMilliSeconds = 1 * 20 * 1000 //25 Min
             timer.setBase(SystemClock.elapsedRealtime() + timeMilliSeconds)
             timer.start()
             btnStart.setText(getString(R.string.Restart))
@@ -70,9 +79,8 @@ class MainActivity : AppCompatActivity() {
             if (moneyEveryTenSeconds == 10){
                 moneyEveryTenSeconds = 0
                 money += 1
-                findViewById<TextView>(R.id.Money).setText(money.toString()+"c")
+                storeMoney(money, sharedPref)
             }
-            Log.i("money", money.toString())
         }
     }
 
@@ -82,9 +90,19 @@ class MainActivity : AppCompatActivity() {
             reachedZero = true
             timer.stop()
             btnStart.setText(getString(R.string.Start))
-            Toast.makeText(this@MainActivity, "You should now take a short brake!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this@MainActivity, "You should take a short brake now!", Toast.LENGTH_LONG).show()
 
         }
+    }
+
+
+    fun storeMoney(money: Int, sharedPref: SharedPreferences){
+        with (sharedPref.edit()) {
+            putInt("Money", money)
+            apply()
+        }
+        Log.i("Money", sharedPref.getInt("Money", 0).toString())
+        findViewById<TextView>(R.id.Money).setText(sharedPref.getInt("Money", 0).toString() + "c")
     }
 }
 
