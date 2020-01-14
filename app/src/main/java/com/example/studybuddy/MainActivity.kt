@@ -17,10 +17,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val btnPause =  findViewById<Button>(R.id.PauseButton)
-        val btnStart =  findViewById<Button>(R.id.StartButton)
-
-        val btn = findViewById<ImageView>(R.id.ShoppingCart)
 
 
         val sharedPref = this@MainActivity.getPreferences(Context.MODE_PRIVATE)
@@ -29,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         //Set correct Money on startup to textView
         findViewById<TextView>(R.id.Money).setText(sharedPref.getInt("Money", 1).toString() + "c")
 
+
+        val btn = findViewById<ImageView>(R.id.ShoppingCart)
+
         //To Navigate To Shop
         btn.setOnClickListener{
             val intent = Intent(this, Shop::class.java)
@@ -36,18 +35,26 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
-
-
-
-
-
-
-        var lastPause: Long = SystemClock.elapsedRealtime()
-        var isPaused = false
+        //Prepare Timer
         val timer = findViewById<Chronometer>(R.id.simpleChronometer)
 
         timer.setCountDown(true)
+
+
+
+        createOnClickListeners(timer, sharedPref)
+
+    }
+
+
+
+    fun createOnClickListeners(timer: Chronometer, sharedPref: SharedPreferences){
+        val btnPause =  findViewById<Button>(R.id.PauseButton)
+        val btnStart =  findViewById<Button>(R.id.StartButton)
+
+        var lastPause: Long = SystemClock.elapsedRealtime()
+        var isPaused = false
+
 
         btnStart.setOnClickListener{
             val timeMilliSeconds = 1 * 20 * 1000 //25 Min
@@ -74,7 +81,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         timer.setOnChronometerTickListener {
-            testZero(timer, btnStart)
+            checkIfZeroIsReached(timer, btnStart)
             moneyEveryTenSeconds += 1
             if (moneyEveryTenSeconds == 10){
                 moneyEveryTenSeconds = 0
@@ -84,8 +91,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun testZero(timer: Chronometer, btnStart: Button){
+
+
+    fun checkIfZeroIsReached(timer: Chronometer, btnStart: Button){
         Log.i("timeLeft", (timer.getBase() - SystemClock.elapsedRealtime()).toString())
+
         if (timer.getBase() - SystemClock.elapsedRealtime() <= 0){
             reachedZero = true
             timer.stop()
@@ -96,12 +106,15 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
     fun storeMoney(money: Int, sharedPref: SharedPreferences){
         with (sharedPref.edit()) {
             putInt("Money", money)
             apply()
         }
+
         Log.i("Money", sharedPref.getInt("Money", 0).toString())
+
         findViewById<TextView>(R.id.Money).setText(sharedPref.getInt("Money", 0).toString() + "c")
     }
 }
