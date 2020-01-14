@@ -23,14 +23,14 @@ class MainActivity : AppCompatActivity() {
         money = sharedPref.getInt("Money", 0)
 
         //Set correct Money on startup to textView
-        findViewById<TextView>(R.id.Money).setText(sharedPref.getInt("Money", 1).toString() + "c")
+        findViewById<TextView>(R.id.Money).setText(sharedPref.getInt("Money", 0).toString() + "c")
 
 
         val btn = findViewById<ImageView>(R.id.ShoppingCart)
 
         //To Navigate To Shop
         btn.setOnClickListener{
-            val intent = Intent(this, Shop::class.java)
+            val intent = Intent(this, ShopPots::class.java)
             startActivity(intent)
         }
 

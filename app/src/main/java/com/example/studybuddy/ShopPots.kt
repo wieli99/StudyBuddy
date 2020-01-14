@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class Shop : AppCompatActivity() {
+class ShopPots : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.shop)
+        setContentView(R.layout.shop_pots)
 
         var button = findViewById<Button>(R.id.button)
         var button2 = findViewById<Button>(R.id.button2)
