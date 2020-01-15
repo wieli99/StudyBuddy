@@ -9,7 +9,7 @@ class ShopPots : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.shop_pots)
+        setContentView(R.layout.activity_shop_pots)
 
         //Read the sharedPreferences money variable
         var prefs = getSharedPreferences("Main", 0)

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/wallpaper"
+        tools:context=".ShopPots">
+
+
+        <View
+            android:id="@+id/rectangle_top"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rounded_corners"
+            android:elevation="5dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/title"
+            app:layout_constraintEnd_toStartOf="@+id/guideline14"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:elevation="6dp"
+            android:text="0c"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline14"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="1dp"
+            android:elevation="6dp"
+            android:text="Shop for pots!"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/PotsBackRectangle"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rounded_corners_light_gray"
+            android:elevation="5dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:elevation="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/PotsBackRectangle"
+            app:layout_constraintStart_toStartOf="@+id/PotsBackRectangle"
+            app:srcCompat="@drawable/pot" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="130dp"
+            android:layout_height="44dp"
+            android:background="@drawable/button_selector"
+            android:elevation="5dp"
+            android:stateListAnimator="@null"
+            android:text="buy 200"
+            android:translationZ="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/PotsBackRectangle"
+            app:layout_constraintStart_toStartOf="@+id/PotsBackRectangle"
+            app:layout_constraintTop_toBottomOf="@+id/PotsBackRectangle" />
+
+        <View
+            android:id="@+id/potsBackRectangle2"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rounded_corners_light_gray"
+            android:elevation="5dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/guideline14"
+            app:layout_constraintStart_toStartOf="@+id/guideline16"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:elevation="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangle2"
+            app:layout_constraintStart_toStartOf="@+id/potsBackRectangle2"
+            app:srcCompat="@drawable/pot" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="130dp"
+            android:layout_height="44dp"
+            android:background="@drawable/button_selector"
+            android:elevation="5dp"
+            android:stateListAnimator="@null"
+            android:text="buy 200"
+            android:translationZ="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/potsBackRectangle2"
+            app:layout_constraintStart_toStartOf="@+id/potsBackRectangle2"
+            app:layout_constraintTop_toBottomOf="@+id/potsBackRectangle2" />
+
+        <View
+            android:id="@+id/potsBackRectangle3"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rounded_corners_light_gray"
+            android:elevation="5dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:elevation="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangle3"
+            app:layout_constraintStart_toStartOf="@+id/potsBackRectangle3"
+            app:srcCompat="@drawable/pot" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="130dp"
+            android:layout_height="44dp"
+            android:background="@drawable/button_selector"
+            android:elevation="5dp"
+            android:stateListAnimator="@null"
+            android:text="buy 200"
+            android:translationZ="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/potsBackRectangle3"
+            app:layout_constraintStart_toStartOf="@+id/potsBackRectangle3"
+            app:layout_constraintTop_toBottomOf="@+id/potsBackRectangle3" />
+
+        <View
+            android:id="@+id/potsBackRectangle4"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rounded_corners_light_gray"
+            android:elevation="5dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/guideline14"
+            app:layout_constraintStart_toStartOf="@+id/guideline16"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:elevation="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangle4"
+            app:layout_constraintStart_toStartOf="@+id/potsBackRectangle4"
+            app:srcCompat="@drawable/pot" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="130dp"
+            android:layout_height="44dp"
+            android:background="@drawable/button_selector"
+            android:elevation="5dp"
+            android:stateListAnimator="@null"
+            android:text="buy 200"
+            android:translationZ="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/potsBackRectangle4"
+            app:layout_constraintStart_toStartOf="@+id/potsBackRectangle4"
+            app:layout_constraintTop_toBottomOf="@+id/potsBackRectangle4" />
+
+        <View
+            android:id="@+id/potsBackRectangle5"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rounded_corners_light_gray"
+            android:elevation="5dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/guideline15"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:elevation="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangle5"
+            app:layout_constraintStart_toStartOf="@+id/potsBackRectangle5"
+            app:srcCompat="@drawable/pot" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="130dp"
+            android:layout_height="44dp"
+            android:background="@drawable/button_selector"
+            android:elevation="5dp"
+            android:stateListAnimator="@null"
+            android:text="buy 200"
+            android:translationZ="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/potsBackRectangle5"
+            app:layout_constraintStart_toStartOf="@+id/potsBackRectangle5"
+            app:layout_constraintTop_toBottomOf="@+id/potsBackRectangle5" />
+
+        <View
+            android:id="@+id/potsBackRectangle6"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rounded_corners_light_gray"
+            android:elevation="5dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/guideline14"
+            app:layout_constraintStart_toStartOf="@+id/guideline16"
+            app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:elevation="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangle6"
+            app:layout_constraintStart_toStartOf="@+id/potsBackRectangle6"
+            app:srcCompat="@drawable/pot" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="130dp"
+            android:layout_height="44dp"
+            android:background="@drawable/button_selector"
+            android:elevation="5dp"
+            android:stateListAnimator="@null"
+            android:text="buy 200"
+            android:translationZ="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/potsBackRectangle6"
+            app:layout_constraintStart_toStartOf="@+id/potsBackRectangle6"
+            app:layout_constraintTop_toBottomOf="@+id/potsBackRectangle6" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.90" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.42" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.58" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

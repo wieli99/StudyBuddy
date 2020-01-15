@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         //To Navigate To Shop
         btn.setOnClickListener{
-            val intent = Intent(this, ShopPots::class.java)
+            val intent = Intent(this, Shop::class.java)
             startActivity(intent)
         }
 
