@@ -2,6 +2,7 @@ package com.example.studybuddy
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 
 class ShopPots : AppCompatActivity() {
@@ -9,6 +10,11 @@ class ShopPots : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.shop_pots)
+
+        //Read the sharedPreferences money variable
+        var prefs = getSharedPreferences("Main", 0)
+
+        Log.i("Money", prefs.getInt("Money", 0).toString())
 
         var button = findViewById<Button>(R.id.button)
         var button2 = findViewById<Button>(R.id.button2)

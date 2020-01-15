@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val sharedPref = this@MainActivity.getPreferences(Context.MODE_PRIVATE)
+        val sharedPref = this@MainActivity.getSharedPreferences("Main", Context.MODE_PRIVATE)
         money = sharedPref.getInt("Money", 0)
 
         //Set correct Money on startup to textView
