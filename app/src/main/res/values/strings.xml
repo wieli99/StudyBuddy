@@ -1,8 +1,24 @@
 <resources>
     <string name="app_name">FrontPage</string>
-    <string name="Restart">Restart</string>
-    <string name="Resume">Resume</string>
-    <string name="Pause">Pause</string>
-    <string name="Start">Start</string>
-    <string name="Purchased">Purchased!</string>
+    <string name="restart_button">Restart</string>
+    <string name="resume_button">Resume</string>
+    <string name="pause_button">Pause</string>
+    <string name="purchased">Purchased!</string>
+    <string name="default_money_value">0c</string>
+    <string name="start_button">Start</string>
+    <string name="studdy_buddy_image_description">An image of the current StudyBuddy</string>
+    <string name="shopping_cart_image_description">An image of a shopping cart</string>
+    <string name="backgrounds_button">Backgrounds</string>
+    <string name="pots_button">Pots</string>
+    <string name="logs_button">Logs</string>
+    <string name="shop_backgrounds_button">Shop Backgrounds</string>
+    <string name="shop_pots_button">Shop Pots</string>
+    <string name="shop_pots_titel">Shop For Pots!</string>
+    <string name="pot_image_description">An image of a pot</string>
+    <string name="buy_pot_button">buy 200</string>
+    <string name="buy_pot_button2">buy 250</string>
+    <string name="buy_pot_button3">buy 300</string>
+    <string name="buy_pot_button4">buy 350</string>
+    <string name="buy_pot_button5">buy 400</string>
+    <string name="buy_pot_button6">buy 500</string>
 </resources>

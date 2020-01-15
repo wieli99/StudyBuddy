@@ -6,8 +6,30 @@
     android:layout_height="match_parent"
     android:background="@drawable/wallpaper">
 
+    <TextView
+        android:id="@+id/moneyMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:elevation="6dp"
+        android:text="@string/default_money_value"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/shoppingCartMain"
+        app:layout_constraintHorizontal_bias="0.436"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/shoppingCartMain"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/shopping_cart_image_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/shoppingcart" />
+
     <View
-        android:id="@+id/rectangle_top"
+        android:id="@+id/rectangleBackgroundChronometer"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_alignParentTop="true"
@@ -15,8 +37,21 @@
         android:elevation="5dp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toEndOf="@+id/PauseButton"
-        app:layout_constraintStart_toStartOf="@+id/StartButton"
+        app:layout_constraintEnd_toEndOf="@+id/pauseButtonMain"
+        app:layout_constraintStart_toStartOf="@+id/startButtonMain"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+    <Button
+        android:id="@+id/startButtonMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:elevation="5dp"
+        android:stateListAnimator="@null"
+        android:text="@string/start_button"
+        android:translationZ="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
     <Chronometer
@@ -31,10 +66,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
+    <Button
+        android:id="@+id/pauseButtonMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_selector"
+        android:elevation="5dp"
+        android:stateListAnimator="@null"
+        android:text="@string/pause_button"
+        android:translationZ="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
     <ImageView
-        android:id="@+id/StudyBuddy"
+        android:id="@+id/studyBuddy"
         android:layout_width="300dp"
         android:layout_height="300dp"
+        android:contentDescription="@string/studdy_buddy_image_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,28 +91,28 @@
         app:srcCompat="@drawable/studybuddy1" />
 
     <Button
-        android:id="@+id/BackgroundsButton"
+        android:id="@+id/backgroundsButtonMain"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/button_selector"
         android:elevation="5dp"
         android:stateListAnimator="@null"
+        android:text="@string/backgrounds_button"
         android:translationZ="5dp"
-        android:text="Backgrounds"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <Button
-        android:id="@+id/PotsButton"
+        android:id="@+id/potsButtonMain"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/button_selector"
         android:elevation="5dp"
         android:stateListAnimator="@null"
+        android:text="@string/pots_button"
         android:translationZ="5dp"
-        android:text="Pots"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="1.0"
@@ -72,14 +121,14 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/LogsButton"
+        android:id="@+id/logsButtonMain"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/button_selector"
         android:elevation="5dp"
         android:stateListAnimator="@null"
+        android:text="@string/logs_button"
         android:translationZ="5dp"
-        android:text="Logs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -104,7 +153,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_percent="0.8508892" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -112,32 +161,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
-
-    <Button
-        android:id="@+id/StartButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_selector"
-        android:elevation="5dp"
-        android:translationZ="5dp"
-        android:stateListAnimator="@null"
-        android:text="Start"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
-
-    <Button
-        android:id="@+id/PauseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_selector"
-        android:elevation="5dp"
-        android:translationZ="5dp"
-        android:stateListAnimator="@null"
-        android:text="Pause"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline5"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -152,26 +175,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.22" />
-
-    <ImageView
-        android:id="@+id/ShoppingCart"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/shoppingcart" />
-
-    <TextView
-        android:id="@+id/Money"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:elevation="6dp"
-        android:text="0c"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/ShoppingCart"
-        app:layout_constraintHorizontal_bias="0.436"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

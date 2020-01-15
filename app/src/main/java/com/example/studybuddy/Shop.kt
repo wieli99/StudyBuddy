@@ -11,7 +11,7 @@ class Shop : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop)
 
-        var shopBtn = findViewById<Button>(R.id.ShopPots)
+        var shopBtn = findViewById<Button>(R.id.shopPotsButton)
         //To Navigate To Shop
         shopBtn.setOnClickListener{
             val intent = Intent(this, ShopPots::class.java)

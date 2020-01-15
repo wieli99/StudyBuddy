@@ -16,12 +16,12 @@ class ShopPots : AppCompatActivity() {
 
         Log.i("Money", prefs.getInt("Money", 0).toString())
 
-        var button = findViewById<Button>(R.id.button)
-        var button2 = findViewById<Button>(R.id.button2)
-        var button3 = findViewById<Button>(R.id.button3)
-        var button4 = findViewById<Button>(R.id.button4)
-        var button5 = findViewById<Button>(R.id.button5)
-        var button6 = findViewById<Button>(R.id.button6)
+        var button = findViewById<Button>(R.id.buyPotButton)
+        var button2 = findViewById<Button>(R.id.buyPotButton2)
+        var button3 = findViewById<Button>(R.id.buyPotButton3)
+        var button4 = findViewById<Button>(R.id.buyPotButton4)
+        var button5 = findViewById<Button>(R.id.buyPotButton5)
+        var button6 = findViewById<Button>(R.id.buyPotButton6)
 
         button.setOnClickListener{
             setButtonText(button)
@@ -50,7 +50,7 @@ class ShopPots : AppCompatActivity() {
 
 
     fun setButtonText(btn: Button){
-        btn.text = getString(R.string.Purchased)
+        btn.text = getString(R.string.purchased)
     }
 
 

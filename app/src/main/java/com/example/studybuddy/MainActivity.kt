@@ -23,10 +23,10 @@ class MainActivity : AppCompatActivity() {
         money = sharedPref.getInt("Money", 0)
 
         //Set correct Money on startup to textView
-        findViewById<TextView>(R.id.Money).setText(sharedPref.getInt("Money", 0).toString() + "c")
+        findViewById<TextView>(R.id.moneyMain).setText(sharedPref.getInt("Money", 0).toString() + "c")
 
 
-        val btn = findViewById<ImageView>(R.id.ShoppingCart)
+        val btn = findViewById<ImageView>(R.id.shoppingCartMain)
 
         //To Navigate To Shop
         btn.setOnClickListener{
@@ -49,8 +49,8 @@ class MainActivity : AppCompatActivity() {
 
 
     fun createOnClickListeners(timer: Chronometer, sharedPref: SharedPreferences){
-        val btnPause =  findViewById<Button>(R.id.PauseButton)
-        val btnStart =  findViewById<Button>(R.id.StartButton)
+        val btnPause =  findViewById<Button>(R.id.pauseButtonMain)
+        val btnStart =  findViewById<Button>(R.id.startButtonMain)
 
         var lastPause: Long = SystemClock.elapsedRealtime()
         var isPaused = false
@@ -60,9 +60,9 @@ class MainActivity : AppCompatActivity() {
             val timeMilliSeconds = 1 * 20 * 1000 //25 Min
             timer.setBase(SystemClock.elapsedRealtime() + timeMilliSeconds)
             timer.start()
-            btnStart.setText(getString(R.string.Restart))
+            btnStart.setText(getString(R.string.restart_button))
             isPaused = false
-            btnPause.setText(getString(R.string.Pause))
+            btnPause.setText(getString(R.string.pause_button))
             moneyEveryTenSeconds = 0
         }
 
@@ -71,12 +71,12 @@ class MainActivity : AppCompatActivity() {
                 lastPause = SystemClock.elapsedRealtime()
                 timer.stop()
                 isPaused = true
-                btnPause.setText(getString(R.string.Resume))
+                btnPause.setText(getString(R.string.resume_button))
             } else if (!reachedZero) {
                 timer.setBase(timer.getBase() + SystemClock.elapsedRealtime() - lastPause)
                 isPaused = false
                 timer.start()
-                btnPause.setText(getString(R.string.Pause))
+                btnPause.setText(getString(R.string.pause_button))
             }
         }
 
@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
         if (timer.getBase() - SystemClock.elapsedRealtime() <= 0){
             reachedZero = true
             timer.stop()
-            btnStart.setText(getString(R.string.Start))
+            btnStart.setText(getString(R.string.start_button))
             Toast.makeText(this@MainActivity, "You should take a short brake now!", Toast.LENGTH_LONG).show()
 
         }
@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity() {
 
         Log.i("Money", sharedPref.getInt("Money", 0).toString())
 
-        findViewById<TextView>(R.id.Money).setText(sharedPref.getInt("Money", 0).toString() + "c")
+        findViewById<TextView>(R.id.moneyMain).setText(sharedPref.getInt("Money", 0).toString() + "c")
     }
 }
 
