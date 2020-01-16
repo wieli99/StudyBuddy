@@ -13,7 +13,7 @@
     <string name="logs_button">Logs</string>
     <string name="shop_backgrounds_button">Shop Backgrounds</string>
     <string name="shop_pots_button">Shop Pots</string>
-    <string name="shop_pots_titel">Shop For Pots!</string>
+    <string name="shop_pots_titel">Shop Pots!</string>
     <string name="pot_image_description">An image of a pot</string>
     <string name="buy_pot_button">buy 200</string>
     <string name="buy_pot_button2">buy 250</string>
@@ -21,4 +21,12 @@
     <string name="buy_pot_button4">buy 350</string>
     <string name="buy_pot_button5">buy 400</string>
     <string name="buy_pot_button6">buy 500</string>
+    <string name="shop_backgrounds_titel">Shop Backgrounds!</string>
+    <string name="buy_background_button">200</string>
+    <string name="buy_background_button2">250</string>
+    <string name="buy_background_button3">300</string>
+    <string name="buy_background_button4">350</string>
+    <string name="buy_background_button5">400</string>
+    <string name="buy_background_button6">500</string>
+    <string name="background_image_description">An image of a background</string>
 </resources>

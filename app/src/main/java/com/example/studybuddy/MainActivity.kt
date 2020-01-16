@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             btnStart.setText(getString(R.string.restart_button))
             isPaused = false
             btnPause.setText(getString(R.string.pause_button))
+            reachedZero = false
             moneyEveryTenSeconds = 0
         }
 

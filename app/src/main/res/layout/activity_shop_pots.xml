@@ -52,7 +52,7 @@
             android:text="@string/shop_pots_titel"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textSize="36sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
