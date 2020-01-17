@@ -1,10 +1,15 @@
 package com.example.studybuddy
 
+import android.app.Activity
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class Settings : AppCompatActivity() {
 
@@ -23,10 +28,14 @@ class Settings : AppCompatActivity() {
 
         saveNameBtn.setOnClickListener{
             storeName(prefsMain)
+            //To Hide Keyboard
+            findViewById<EditText>(R.id.editNameText).onEditorAction(EditorInfo.IME_ACTION_DONE);
         }
 
         saveTimeBtn.setOnClickListener{
             storeTime(prefsMain)
+            //To Hide Keyboard
+            findViewById<EditText>(R.id.editNameText).onEditorAction(EditorInfo.IME_ACTION_DONE);
         }
     }
 
@@ -35,6 +44,7 @@ class Settings : AppCompatActivity() {
             putString("Name", findViewById<EditText>(R.id.editNameText).text.toString())
             apply()
         }
+        Toast.makeText(this@Settings, "Name setting saved!", Toast.LENGTH_SHORT).show()
     }
 
     fun storeTime(sharedPref: SharedPreferences){
@@ -42,5 +52,6 @@ class Settings : AppCompatActivity() {
             putInt("Time", findViewById<EditText>(R.id.editTimeText).text.toString().toInt()) //Seems stupid... but this is the way
             apply()
         }
+        Toast.makeText(this@Settings, "Time setting saved!", Toast.LENGTH_SHORT).show()
     }
 }
