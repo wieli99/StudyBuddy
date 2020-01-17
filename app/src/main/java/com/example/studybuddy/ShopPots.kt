@@ -15,20 +15,20 @@ class ShopPots : AppCompatActivity() {
         setContentView(R.layout.activity_shop_pots)
 
         //Read the sharedPreferences money variable
-        var prefsMain = getSharedPreferences("Main", 0)
+        val prefsMain = getSharedPreferences("Main", 0)
 
         Log.i("Money", prefsMain.getInt("Money", 0).toString())
 
         //Create sharedPreferences for Pots
         val prefsShopPots = this@ShopPots.getSharedPreferences("Pots", Context.MODE_PRIVATE)
 
-        //Buttons to boy the pots
-        var button = findViewById<Button>(R.id.buyPotButton)
-        var button2 = findViewById<Button>(R.id.buyPotButton2)
-        var button3 = findViewById<Button>(R.id.buyPotButton3)
-        var button4 = findViewById<Button>(R.id.buyPotButton4)
-        var button5 = findViewById<Button>(R.id.buyPotButton5)
-        var button6 = findViewById<Button>(R.id.buyPotButton6)
+        //Buttons to buy the pots
+        val button = findViewById<Button>(R.id.buyPotButton)
+        val button2 = findViewById<Button>(R.id.buyPotButton2)
+        val button3 = findViewById<Button>(R.id.buyPotButton3)
+        val button4 = findViewById<Button>(R.id.buyPotButton4)
+        val button5 = findViewById<Button>(R.id.buyPotButton5)
+        val button6 = findViewById<Button>(R.id.buyPotButton6)
 
         val buttonlist = listOf<Button>(button, button2, button3, button4, button5, button6)
 
