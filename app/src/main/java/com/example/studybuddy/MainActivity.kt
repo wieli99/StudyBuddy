@@ -26,13 +26,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.moneyMain).setText(sharedPref.getInt("Money", 0).toString() + "c")
 
 
-        val btn = findViewById<ImageView>(R.id.shoppingCartMain)
-
-        //To Navigate To Shop
-        btn.setOnClickListener{
-            val intent = Intent(this, Shop::class.java)
-            startActivity(intent)
-        }
+        changeScreensListeners()
 
 
         //Prepare Timer
@@ -46,6 +40,20 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun changeScreensListeners() {
+        val shoppingBtn = findViewById<ImageView>(R.id.shoppingCartMain)
+        //To Navigate To Shop
+        shoppingBtn.setOnClickListener {
+            startActivity(Intent(this, Shop::class.java))
+        }
+
+        val settingsBtn = findViewById<ImageView>(R.id.settingsWheel)
+        //To Navigate to Settings
+        settingsBtn.setOnClickListener{
+            startActivity(Intent(this, Settings::class.java))
+        }
+
+    }
 
 
     fun createOnClickListeners(timer: Chronometer, sharedPref: SharedPreferences){

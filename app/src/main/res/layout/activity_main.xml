@@ -29,7 +29,7 @@
         app:srcCompat="@drawable/shoppingcart" />
 
     <View
-        android:id="@+id/rectangleBackgroundChronometer"
+        android:id="@+id/rectangleBackgroundNameSettings"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_alignParentTop="true"
@@ -175,5 +175,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.22" />
+
+    <ImageView
+        android:id="@+id/settingsWheel"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/settings_wheel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
