@@ -114,7 +114,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:elevation="6dp"
-        android:inputType="number"
         android:text="@string/timeSettingTitle"
         android:textAlignment="center"
         android:textSize="20sp"
