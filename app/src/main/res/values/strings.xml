@@ -29,4 +29,7 @@
     <string name="buy_background_button5">400</string>
     <string name="buy_background_button6">500</string>
     <string name="background_image_description">An image of a background</string>
+    <string name="save">Save</string>
+    <string name="nameSettingTitle">Name your StuddyBuddy</string>
+    <string name="timeSettingTitle">Set default time</string>
 </resources>
