@@ -24,7 +24,7 @@ class ShopPots : AppCompatActivity() {
         val prefsShopPots = this@ShopPots.getSharedPreferences("Pots", Context.MODE_PRIVATE)
 
         //Set Money value
-        findViewById<TextView>(R.id.moneyPotsShop).setText(prefsMain.getInt("Money", 0).toString())
+        findViewById<TextView>(R.id.moneyPotsShop).setText(prefsMain.getInt("Money", 0).toString() + "c")
 
         //Buttons to buy the pots
         val button = findViewById<Button>(R.id.buyPotButton)

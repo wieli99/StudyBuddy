@@ -16,15 +16,15 @@ class ShopBackgrounds : AppCompatActivity() {
         setContentView(R.layout.activity_shop_backgrounds)
 
         //Read the sharedPreferences money variable
-        val prefs = getSharedPreferences("Main", 0)
+        val prefsMain = getSharedPreferences("Main", 0)
 
-        Log.i("Money", prefs.getInt("Money", 0).toString())
+        Log.i("Money", prefsMain.getInt("Money", 0).toString())
 
         //Create sharedPreferences for Backgrounds
         val prefsShopBackgrounds = this@ShopBackgrounds.getSharedPreferences("Backgrounds", Context.MODE_PRIVATE)
 
         //Set Money value
-        findViewById<TextView>(R.id.moneyBackgroundsShop).setText(prefs.getInt("Money", 0).toString())
+        findViewById<TextView>(R.id.moneyBackgroundsShop).setText(prefsMain.getInt("Money", 0).toString() + "c")
 
         //Buttons to buy the Backgrounds
         val button = findViewById<Button>(R.id.buyBackgroundButton)
@@ -50,8 +50,9 @@ class ShopBackgrounds : AppCompatActivity() {
 
         button.setOnClickListener{
             if (!checkIfBackgroundIsAlreadyPurchased("background", prefsShopBackgrounds)){
-                storeBoughtBackground("background", prefsShopBackgrounds)
-                setButtonText(button)
+                if(purchaseBackground("background", prefsShopBackgrounds, 200)){
+                    setButtonText(button)
+                }
             } else {
                 Toast.makeText(this@ShopBackgrounds, "Background already purchased", Toast.LENGTH_SHORT).show()
             }
@@ -59,8 +60,9 @@ class ShopBackgrounds : AppCompatActivity() {
 
         button2.setOnClickListener{
             if (!checkIfBackgroundIsAlreadyPurchased("background2", prefsShopBackgrounds)){
-                storeBoughtBackground("background2", prefsShopBackgrounds)
-                setButtonText(button2)
+                if(purchaseBackground("background2", prefsShopBackgrounds, 250)){
+                    setButtonText(button2)
+                }
             } else {
                 Toast.makeText(this@ShopBackgrounds, "Background already purchased", Toast.LENGTH_SHORT).show()
             }
@@ -68,8 +70,9 @@ class ShopBackgrounds : AppCompatActivity() {
 
         button3.setOnClickListener{
             if (!checkIfBackgroundIsAlreadyPurchased("background3", prefsShopBackgrounds)){
-                storeBoughtBackground("background3", prefsShopBackgrounds)
-                setButtonText(button3)
+                if(purchaseBackground("background3", prefsShopBackgrounds, 300)) {
+                        setButtonText(button3)
+                    }
             } else {
                 Toast.makeText(this@ShopBackgrounds, "Background already purchased", Toast.LENGTH_SHORT).show()
             }
@@ -77,8 +80,9 @@ class ShopBackgrounds : AppCompatActivity() {
 
         button4.setOnClickListener{
             if (!checkIfBackgroundIsAlreadyPurchased("background4", prefsShopBackgrounds)){
-                storeBoughtBackground("background4", prefsShopBackgrounds)
-                setButtonText(button4)
+                if(purchaseBackground("background4", prefsShopBackgrounds, 350)){
+                    setButtonText(button4)
+                }
             } else {
                 Toast.makeText(this@ShopBackgrounds, "Background already purchased", Toast.LENGTH_SHORT).show()
             }
@@ -86,8 +90,9 @@ class ShopBackgrounds : AppCompatActivity() {
 
         button5.setOnClickListener{
             if (!checkIfBackgroundIsAlreadyPurchased("background5", prefsShopBackgrounds)){
-                storeBoughtBackground("background5", prefsShopBackgrounds)
-                setButtonText(button5)
+                if(purchaseBackground("background5", prefsShopBackgrounds, 400)){
+                    setButtonText(button5)
+                }
             } else {
                 Toast.makeText(this@ShopBackgrounds, "Background already purchased", Toast.LENGTH_SHORT).show()
             }
@@ -95,8 +100,9 @@ class ShopBackgrounds : AppCompatActivity() {
 
         button6.setOnClickListener{
             if (!checkIfBackgroundIsAlreadyPurchased("background6", prefsShopBackgrounds)){
-                storeBoughtBackground("background6", prefsShopBackgrounds)
-                setButtonText(button6)
+                if(purchaseBackground("background6", prefsShopBackgrounds, 500)){
+                    setButtonText(button6)
+                }
             } else {
                 Toast.makeText(this@ShopBackgrounds, "Background already purchased", Toast.LENGTH_SHORT).show()
             }
@@ -118,6 +124,32 @@ class ShopBackgrounds : AppCompatActivity() {
         Log.i("BackgroundBoughtStatus", background + " is not yet bought")
         return false
     }
+
+
+    fun purchaseBackground(pot: String, sharedPref: SharedPreferences, price: Int): Boolean{
+        var mainPrefs = getSharedPreferences("Main", 0)
+        var money = mainPrefs.getInt("Money", 0)
+        if (money >= price){
+            updateMoney(mainPrefs, money, price)
+            storeBoughtBackground(pot, sharedPref)
+            return true
+        } else{
+            Toast.makeText(this@ShopBackgrounds, "Not enough money!", Toast.LENGTH_SHORT).show()
+            return false
+        }
+    }
+
+
+    fun updateMoney(mainPrefs: SharedPreferences, money: Int, price: Int){
+        with (mainPrefs.edit()) {
+            Log.i("Money", money.toString())
+            putInt("Money", money-price)
+            apply()
+        }
+        findViewById<TextView>(R.id.moneyBackgroundsShop).setText(mainPrefs.getInt("Money", 0).toString())
+        Log.i("Money", money.toString())
+    }
+
 
     fun storeBoughtBackground(backgrond: String, sharedPref: SharedPreferences){
         with (sharedPref.edit()) {
