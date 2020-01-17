@@ -63,7 +63,7 @@
         app:layout_constraintTop_toTopOf="@+id/rectangleBackgroundNameSettings" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -77,7 +77,7 @@
         android:inputType="textPersonName"
         android:outlineProvider="none"
         android:stateListAnimator="@null"
-        android:text="@string/defaultNameSettingsText"
+        android:text="@string/defaultNameSettingText"
         app:layout_constraintBottom_toTopOf="@+id/saveNameSettingsButton"
         app:layout_constraintEnd_toEndOf="@+id/rectangleBackgroundNameSettings"
         app:layout_constraintStart_toStartOf="@+id/rectangleBackgroundNameSettings"
@@ -121,6 +121,27 @@
         app:layout_constraintEnd_toEndOf="@+id/rectangleBackgroundTimeSettings"
         app:layout_constraintStart_toStartOf="@+id/rectangleBackgroundNameSettings"
         app:layout_constraintTop_toTopOf="@+id/rectangleBackgroundTimeSettings" />
+
+    <EditText
+        android:id="@+id/editTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="6dp"
+        android:ems="10"
+        android:hint="@string/timeSettingHint"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:outlineProvider="none"
+        android:stateListAnimator="@null"
+        android:text="@string/defaultTimeSettingText"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleBackgroundTimeSettings"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleBackgroundTimeSettings"
+        app:layout_constraintStart_toStartOf="@+id/rectangleBackgroundTimeSettings"
+        app:layout_constraintTop_toBottomOf="@+id/timeSetting" />
 
     <Button
         android:id="@+id/saveTimeSettingsButton"

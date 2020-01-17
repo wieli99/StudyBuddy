@@ -31,7 +31,9 @@
     <string name="background_image_description">An image of a background</string>
     <string name="save">Save</string>
     <string name="nameSettingTitle">Name your StuddyBuddy</string>
-    <string name="timeSettingTitle">Set default time</string>
-    <string name="defaultNameSettingsText">enter a name...</string>
+    <string name="timeSettingTitle">Set default timer time</string>
+    <string name="defaultNameSettingText">enter a name...</string>
     <string name="nameSettingHint">Enter a name for your StuddyBuddy</string>
+    <string name="timeSettingHint">Enter a time in minutes ofr your timer time</string>
+    <string name="defaultTimeSettingText">enter a time in minutes...</string>
 </resources>
