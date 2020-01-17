@@ -32,4 +32,6 @@
     <string name="save">Save</string>
     <string name="nameSettingTitle">Name your StuddyBuddy</string>
     <string name="timeSettingTitle">Set default time</string>
+    <string name="defaultNameSettingsText">enter a name...</string>
+    <string name="nameSettingHint">Enter a name for your StuddyBuddy</string>
 </resources>
