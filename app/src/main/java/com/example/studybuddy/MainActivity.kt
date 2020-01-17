@@ -37,7 +37,13 @@ class MainActivity : AppCompatActivity() {
 
 
         createOnClickListeners(timer, sharedPref)
+    }
 
+    //Also executes when activity is restarted by the back navigation
+    override fun onResume() {
+        super.onResume()
+        val sharedPref = this@MainActivity.getSharedPreferences("Main", Context.MODE_PRIVATE)
+        setStudyBuddyName(sharedPref)
     }
 
     private fun changeScreensListeners() {
@@ -126,6 +132,9 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.moneyMain).setText(sharedPref.getInt("Money", 0).toString() + "c")
     }
+
+    fun setStudyBuddyName(sharedPref: SharedPreferences){
+        findViewById<TextView>(R.id.studyBuddyName).setText(sharedPref.getString("Name", "Frederick"))
+    }
+
 }
-
-
