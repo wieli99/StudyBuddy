@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 
 class ShopPots : AppCompatActivity() {
@@ -21,6 +22,9 @@ class ShopPots : AppCompatActivity() {
 
         //Create sharedPreferences for Pots
         val prefsShopPots = this@ShopPots.getSharedPreferences("Pots", Context.MODE_PRIVATE)
+
+        //Set Money value
+        findViewById<TextView>(R.id.moneyPotsShop).setText(prefsMain.getInt("Money", 0).toString())
 
         //Buttons to buy the pots
         val button = findViewById<Button>(R.id.buyPotButton)
@@ -46,8 +50,9 @@ class ShopPots : AppCompatActivity() {
 
         button.setOnClickListener{
             if (!checkIfPotIsAlreadyPurchased("pot", prefsShopPots)){
-                storeBoughtPot("pot", prefsShopPots)
-                setButtonText(button)
+                if(purchasePot("pot", prefsShopPots, 200)){
+                    setButtonText(button)
+                }
             } else {
                 Toast.makeText(this@ShopPots, "Pot already purchased", Toast.LENGTH_SHORT).show()
             }
@@ -55,8 +60,9 @@ class ShopPots : AppCompatActivity() {
 
         button2.setOnClickListener{
             if (!checkIfPotIsAlreadyPurchased("pot2", prefsShopPots)){
-                storeBoughtPot("pot2", prefsShopPots)
-                setButtonText(button2)
+                if(purchasePot("pot2", prefsShopPots, 250)){
+                    setButtonText(button2)
+                }
             } else {
                 Toast.makeText(this@ShopPots, "Pot already purchased", Toast.LENGTH_SHORT).show()
             }
@@ -64,8 +70,9 @@ class ShopPots : AppCompatActivity() {
 
         button3.setOnClickListener{
             if (!checkIfPotIsAlreadyPurchased("pot3", prefsShopPots)){
-                storeBoughtPot("pot3", prefsShopPots)
-                setButtonText(button3)
+                if(purchasePot("pot3", prefsShopPots, 300)){
+                    setButtonText(button3)
+                }
             } else {
                 Toast.makeText(this@ShopPots, "Pot already purchased", Toast.LENGTH_SHORT).show()
             }
@@ -73,8 +80,9 @@ class ShopPots : AppCompatActivity() {
 
         button4.setOnClickListener{
             if (!checkIfPotIsAlreadyPurchased("pot4", prefsShopPots)){
-                storeBoughtPot("pot4", prefsShopPots)
-                setButtonText(button4)
+                if(purchasePot("pot4", prefsShopPots, 350)){
+                    setButtonText(button4)
+                }
             } else {
                 Toast.makeText(this@ShopPots, "Pot already purchased", Toast.LENGTH_SHORT).show()
             }
@@ -82,8 +90,9 @@ class ShopPots : AppCompatActivity() {
 
         button5.setOnClickListener{
             if (!checkIfPotIsAlreadyPurchased("pot5", prefsShopPots)){
-                storeBoughtPot("pot5", prefsShopPots)
-                setButtonText(button5)
+                if(purchasePot("pot5", prefsShopPots, 400)){
+                    setButtonText(button5)
+                }
             } else {
                 Toast.makeText(this@ShopPots, "Pot already purchased", Toast.LENGTH_SHORT).show()
             }
@@ -91,8 +100,9 @@ class ShopPots : AppCompatActivity() {
 
         button6.setOnClickListener{
             if (!checkIfPotIsAlreadyPurchased("pot6", prefsShopPots)){
-                storeBoughtPot("pot6", prefsShopPots)
-                setButtonText(button6)
+                if(purchasePot("pot6", prefsShopPots, 500)){
+                    setButtonText(button6)
+                }
             } else {
                 Toast.makeText(this@ShopPots, "Pot already purchased", Toast.LENGTH_SHORT).show()
             }
@@ -114,6 +124,31 @@ class ShopPots : AppCompatActivity() {
         return false
     }
 
+    fun purchasePot(pot: String, sharedPref: SharedPreferences, price: Int): Boolean{
+        var mainPrefs = getSharedPreferences("Main", 0)
+        var money = mainPrefs.getInt("Money", 0)
+        if (money >= price){
+            updateMoney(mainPrefs, money, price)
+            storeBoughtPot(pot, sharedPref)
+            return true
+        } else{
+            Toast.makeText(this@ShopPots, "Not enough money!", Toast.LENGTH_SHORT).show()
+            return false
+        }
+    }
+
+
+    fun updateMoney(mainPrefs: SharedPreferences, money: Int, price: Int){
+        with (mainPrefs.edit()) {
+            Log.i("Money", money.toString())
+            putInt("Money", money-price)
+            apply()
+        }
+        findViewById<TextView>(R.id.moneyPotsShop).setText(mainPrefs.getInt("Money", 0).toString())
+        Log.i("Money", money.toString())
+    }
+
+
     fun storeBoughtPot(pot: String, sharedPref: SharedPreferences){
         with (sharedPref.edit()) {
             putBoolean(pot, true)
@@ -123,6 +158,5 @@ class ShopPots : AppCompatActivity() {
         Log.i("PotBought", "bought " + pot + "!")
         Toast.makeText(this@ShopPots, "You bought a pot!", Toast.LENGTH_SHORT).show()
     }
-
 
 }

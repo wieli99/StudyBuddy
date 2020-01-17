@@ -47,6 +47,8 @@ class MainActivity : AppCompatActivity() {
         val sharedPref = this@MainActivity.getSharedPreferences("Main", Context.MODE_PRIVATE)
         setStudyBuddyName(sharedPref)
         setTimerTime(sharedPref)
+        money = sharedPref.getInt("Money", 0)
+        findViewById<TextView>(R.id.moneyMain).setText(sharedPref.getInt("Money", 0).toString() + "c")
     }
 
 
