@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     var reachedZero: Boolean = false
     var money = 0
     var moneyEveryTenSeconds = 0
+    var minutes = 25
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,12 +40,15 @@ class MainActivity : AppCompatActivity() {
         createOnClickListeners(timer, sharedPref)
     }
 
+
     //Also executes when activity is restarted by the back navigation
     override fun onResume() {
         super.onResume()
         val sharedPref = this@MainActivity.getSharedPreferences("Main", Context.MODE_PRIVATE)
         setStudyBuddyName(sharedPref)
+        setTimerTime(sharedPref)
     }
+
 
     private fun changeScreensListeners() {
         val shoppingBtn = findViewById<ImageView>(R.id.shoppingCartMain)
@@ -71,7 +75,7 @@ class MainActivity : AppCompatActivity() {
 
 
         btnStart.setOnClickListener{
-            val timeMilliSeconds = 1 * 20 * 1000 //25 Min
+            val timeMilliSeconds = minutes * 60 * 1000 //25 Min
             timer.setBase(SystemClock.elapsedRealtime() + timeMilliSeconds)
             timer.start()
             btnStart.setText(getString(R.string.restart_button))
@@ -133,8 +137,13 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.moneyMain).setText(sharedPref.getInt("Money", 0).toString() + "c")
     }
 
+
     fun setStudyBuddyName(sharedPref: SharedPreferences){
         findViewById<TextView>(R.id.studyBuddyName).setText(sharedPref.getString("Name", "Frederick"))
     }
 
+
+    fun setTimerTime(sharedPref: SharedPreferences){
+        minutes = sharedPref.getInt("Time", 25)
+    }
 }
