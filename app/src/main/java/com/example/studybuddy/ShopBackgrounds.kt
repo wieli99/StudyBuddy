@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 
 class ShopBackgrounds : AppCompatActivity() {
@@ -21,6 +22,9 @@ class ShopBackgrounds : AppCompatActivity() {
 
         //Create sharedPreferences for Backgrounds
         val prefsShopBackgrounds = this@ShopBackgrounds.getSharedPreferences("Backgrounds", Context.MODE_PRIVATE)
+
+        //Set Money value
+        findViewById<TextView>(R.id.moneyBackgroundsShop).setText(prefs.getInt("Money", 0).toString())
 
         //Buttons to buy the Backgrounds
         val button = findViewById<Button>(R.id.buyBackgroundButton)
