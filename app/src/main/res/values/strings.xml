@@ -36,4 +36,5 @@
     <string name="time_setting_hint">Enter a time in minutes...</string>
     <string name="studdy_buddy_default_name">Frederick</string>
     <string name="settings_image_description">An image of a settings wheel</string>
+    <string name="settings_title">Settings</string>
 </resources>
