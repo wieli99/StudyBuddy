@@ -38,7 +38,7 @@
         app:srcCompat="@drawable/shoppingcart" />
 
     <View
-        android:id="@+id/rectangleBackgroundNameSettings"
+        android:id="@+id/rectangleTopMain"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_alignParentTop="true"
