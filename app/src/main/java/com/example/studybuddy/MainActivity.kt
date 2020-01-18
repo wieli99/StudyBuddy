@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
 
         //Prepare Timer
         val timer = findViewById<Chronometer>(R.id.simpleChronometer)
-
         timer.setCountDown(true)
 
 
@@ -102,7 +101,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         timer.setOnChronometerTickListener {
-            checkIfZeroIsReached(timer, btnStart)
+            checkIfZeroIsReached(timer, btnStart, sharedPref)
             moneyEveryTenSeconds += 1
             if (moneyEveryTenSeconds == 10){
                 moneyEveryTenSeconds = 0
@@ -114,7 +113,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    fun checkIfZeroIsReached(timer: Chronometer, btnStart: Button){
+    fun checkIfZeroIsReached(timer: Chronometer, btnStart: Button, sharedPref: SharedPreferences){
         Log.i("timeLeft", (timer.getBase() - SystemClock.elapsedRealtime()).toString())
 
         if (timer.getBase() - SystemClock.elapsedRealtime() <= 0){
@@ -123,14 +122,26 @@ class MainActivity : AppCompatActivity() {
             btnStart.setText(getString(R.string.start_button))
             Toast.makeText(this@MainActivity, "You should take a short brake now!", Toast.LENGTH_LONG).show()
 
+            //Make entry for statistiks
+            storeTimeForStatistiks(minutes, sharedPref)
         }
     }
 
+
+    fun storeTimeForStatistiks(minutes: Int, sharedPref: SharedPreferences){
+        with (sharedPref.edit()) {
+            putInt("TotalMinutes", sharedPref.getInt("TotalMinutes", 0) - minutes)
+            putInt("TotalSessions", sharedPref.getInt("TotalSessions", 0) +1)
+            apply()
+        }
+    }
 
 
     fun storeMoney(money: Int, sharedPref: SharedPreferences){
         with (sharedPref.edit()) {
             putInt("Money", money)
+            //For statistiks
+            putInt("TotalMoney", sharedPref.getInt("TotalMoney", 0) +1)
             apply()
         }
 
