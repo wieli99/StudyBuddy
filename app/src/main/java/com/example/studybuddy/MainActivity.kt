@@ -70,6 +70,7 @@ class MainActivity : AppCompatActivity() {
     fun createOnClickListeners(timer: Chronometer, sharedPref: SharedPreferences){
         val btnPause =  findViewById<Button>(R.id.pauseButtonMain)
         val btnStart =  findViewById<Button>(R.id.startButtonMain)
+        val btnStats = findViewById<Button>(R.id.statsButtonMain)
 
         var lastPause: Long = SystemClock.elapsedRealtime()
         var isPaused = false
@@ -98,6 +99,10 @@ class MainActivity : AppCompatActivity() {
                 timer.start()
                 btnPause.setText(getString(R.string.pause_button))
             }
+        }
+
+        btnStats.setOnClickListener{
+            startActivity(Intent(this, Stats::class.java))
         }
 
         timer.setOnChronometerTickListener {
