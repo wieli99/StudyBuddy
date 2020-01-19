@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:fillViewport="true" >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/wallpaper"
+    tools:context=".Backgrounds">
+
+
+    <View
+        android:id="@+id/rectangleTopBackgrounds"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/rounded_corners"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/titleBackgrounds"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintStart_toStartOf="@+id/guideline13"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleBackgrounds"
+        android:layout_width="0dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="28dp"
+        android:elevation="6dp"
+        android:text="@string/backgrounds_title"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/backgroundsBackRectangle"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corners_light_gray"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintStart_toStartOf="@+id/guideline13"
+        app:layout_constraintTop_toBottomOf="@+id/titleBackgrounds" />
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/background_image_description"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangle"
+        app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle"
+        app:srcCompat="@drawable/wallpaper" />
+
+    <ImageView
+        android:id="@+id/padlock"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/padlock_description"
+        android:elevation="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundImage"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundImage"
+        app:layout_constraintStart_toStartOf="@+id/backgroundImage"
+        app:layout_constraintTop_toTopOf="@+id/backgroundImage"
+        app:srcCompat="@drawable/Lock" />
+
+    <Button
+        android:id="@+id/selectBackgroundButton"
+        android:layout_width="130dp"
+        android:layout_height="44dp"
+        android:background="@drawable/button_selector"
+        android:elevation="5dp"
+        android:stateListAnimator="@null"
+        android:text="@string/select_button"
+        android:translationZ="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundsBackRectangle"
+        app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundsBackRectangle" />
+
+    <View
+        android:id="@+id/backgroundsBackRectangle2"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corners_light_gray"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintStart_toStartOf="@+id/guideline16"
+        app:layout_constraintTop_toBottomOf="@+id/titleBackgrounds" />
+
+    <ImageView
+        android:id="@+id/backgroundImage2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/background_image_description"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangle2"
+        app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle2"
+        app:srcCompat="@drawable/wallpaper" />
+
+    <ImageView
+        android:id="@+id/padlock2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/padlock_description"
+        android:elevation="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundImage2"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundImage2"
+        app:layout_constraintStart_toStartOf="@+id/backgroundImage2"
+        app:layout_constraintTop_toTopOf="@+id/backgroundImage2"
+        app:srcCompat="@drawable/Lock" />
+
+    <Button
+        android:id="@+id/selectBackgroundButton2"
+        android:layout_width="130dp"
+        android:layout_height="44dp"
+        android:background="@drawable/button_selector"
+        android:elevation="5dp"
+        android:stateListAnimator="@null"
+        android:text="@string/select_button"
+        android:translationZ="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundsBackRectangle2"
+        app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle2"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundsBackRectangle2" />
+
+    <View
+        android:id="@+id/backgroundsBackRectangle3"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corners_light_gray"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintStart_toStartOf="@+id/guideline13"
+        app:layout_constraintTop_toBottomOf="@+id/selectBackgroundButton" />
+
+    <ImageView
+        android:id="@+id/backgroundImage3"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/background_image_description"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangle3"
+        app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle3"
+        app:srcCompat="@drawable/wallpaper" />
+
+    <ImageView
+        android:id="@+id/padlock3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/padlock_description"
+        android:elevation="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundImage3"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundImage3"
+        app:layout_constraintStart_toStartOf="@+id/backgroundImage3"
+        app:layout_constraintTop_toTopOf="@+id/backgroundImage3"
+        app:srcCompat="@drawable/Lock" />
+
+    <Button
+        android:id="@+id/selectBackgroundButton3"
+        android:layout_width="130dp"
+        android:layout_height="44dp"
+        android:background="@drawable/button_selector"
+        android:elevation="5dp"
+        android:stateListAnimator="@null"
+        android:text="@string/select_button"
+        android:translationZ="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundsBackRectangle3"
+        app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle3"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundsBackRectangle3" />
+
+    <View
+        android:id="@+id/backgroundsBackRectangle4"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corners_light_gray"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintStart_toStartOf="@+id/guideline16"
+        app:layout_constraintTop_toBottomOf="@+id/selectBackgroundButton2" />
+
+    <ImageView
+        android:id="@+id/backgroundImage4"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/background_image_description"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangle4"
+        app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle4"
+        app:srcCompat="@drawable/wallpaper" />
+
+    <ImageView
+        android:id="@+id/padlock4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/padlock_description"
+        android:elevation="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundImage4"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundImage4"
+        app:layout_constraintStart_toStartOf="@+id/backgroundImage4"
+        app:layout_constraintTop_toTopOf="@+id/backgroundImage4"
+        app:srcCompat="@drawable/Lock" />
+
+    <Button
+        android:id="@+id/selectBackgroundButton4"
+        android:layout_width="130dp"
+        android:layout_height="44dp"
+        android:background="@drawable/button_selector"
+        android:elevation="5dp"
+        android:stateListAnimator="@null"
+        android:text="@string/select_button"
+        android:translationZ="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundsBackRectangle4"
+        app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle4"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundsBackRectangle4" />
+
+    <View
+        android:id="@+id/backgroundsBackRectangle5"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corners_light_gray"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintStart_toStartOf="@+id/guideline13"
+        app:layout_constraintTop_toBottomOf="@+id/selectBackgroundButton3" />
+
+    <ImageView
+        android:id="@+id/backgroundImage5"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/background_image_description"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangle5"
+        app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle5"
+        app:srcCompat="@drawable/wallpaper" />
+
+    <ImageView
+        android:id="@+id/padlock5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/padlock_description"
+        android:elevation="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundImage5"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundImage5"
+        app:layout_constraintStart_toStartOf="@+id/backgroundImage5"
+        app:layout_constraintTop_toTopOf="@+id/backgroundImage5"
+        app:srcCompat="@drawable/Lock" />
+
+    <Button
+        android:id="@+id/selectBackgroundButton5"
+        android:layout_width="130dp"
+        android:layout_height="44dp"
+        android:background="@drawable/button_selector"
+        android:elevation="5dp"
+        android:stateListAnimator="@null"
+        android:text="@string/select_button"
+        android:translationZ="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundsBackRectangle5"
+        app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle5"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundsBackRectangle5" />
+
+    <View
+        android:id="@+id/backgroundsBackRectangle6"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corners_light_gray"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintStart_toStartOf="@+id/guideline16"
+        app:layout_constraintTop_toBottomOf="@+id/selectBackgroundButton4" />
+
+    <ImageView
+        android:id="@+id/backgroundImage6"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/background_image_description"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangle6"
+        app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle6"
+        app:srcCompat="@drawable/wallpaper" />
+
+    <ImageView
+        android:id="@+id/padlock6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/padlock_description"
+        android:elevation="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundImage6"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundImage6"
+        app:layout_constraintStart_toStartOf="@+id/backgroundImage6"
+        app:layout_constraintTop_toTopOf="@+id/backgroundImage6"
+        app:srcCompat="@drawable/Lock" />
+
+    <Button
+        android:id="@+id/selectBackgroundButton6"
+        android:layout_width="130dp"
+        android:layout_height="44dp"
+        android:background="@drawable/button_selector"
+        android:elevation="5dp"
+        android:stateListAnimator="@null"
+        android:text="@string/select_button"
+        android:translationZ="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundsBackRectangle6"
+        app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle6"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundsBackRectangle6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.42" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.58" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

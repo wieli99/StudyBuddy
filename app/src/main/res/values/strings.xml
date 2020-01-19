@@ -48,4 +48,7 @@
     <string name="stats_avg_session_length">0 min</string>
     <string name="stats_total_items_bought">0 items</string>
     <string name="stats_total_items_bought_title">Total items bought</string>
+    <string name="select_button">Select</string>
+    <string name="backgrounds_title">Backgrounds</string>
+    <string name="padlock_description">A padlock that indicates that you have not yet bought this item</string>
 </resources>
