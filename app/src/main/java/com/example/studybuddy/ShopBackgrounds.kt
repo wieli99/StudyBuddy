@@ -132,6 +132,7 @@ class ShopBackgrounds : AppCompatActivity() {
         if (money >= price){
             updateMoney(mainPrefs, money, price)
             storeBoughtBackground(pot, sharedPref)
+            storeItemBought(mainPrefs)
             return true
         } else{
             Toast.makeText(this@ShopBackgrounds, "Not enough money!", Toast.LENGTH_SHORT).show()
@@ -159,6 +160,13 @@ class ShopBackgrounds : AppCompatActivity() {
 
         Log.i("BackgroundBought", "bought " + backgrond + "!")
         Toast.makeText(this@ShopBackgrounds, "You bought a background!", Toast.LENGTH_SHORT).show()
+    }
+
+    fun storeItemBought(preferences: SharedPreferences){
+        with (preferences.edit()) {
+            putInt("TotalItems", preferences.getInt("TotalItems", 0) + 1)
+            apply()
+        }
     }
 
 

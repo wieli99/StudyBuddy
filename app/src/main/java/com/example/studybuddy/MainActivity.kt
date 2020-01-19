@@ -135,7 +135,6 @@ class MainActivity : AppCompatActivity() {
 
     fun storeTimeForStatistiks(minutes: Int, sharedPref: SharedPreferences){
         with (sharedPref.edit()) {
-            putInt("TotalMinutes", sharedPref.getInt("TotalMinutes", 0) - minutes)
             putInt("TotalSessions", sharedPref.getInt("TotalSessions", 0) +1)
             apply()
         }

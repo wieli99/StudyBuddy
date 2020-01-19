@@ -130,6 +130,7 @@ class ShopPots : AppCompatActivity() {
         if (money >= price){
             updateMoney(mainPrefs, money, price)
             storeBoughtPot(pot, sharedPref)
+            storeItemBought(mainPrefs)
             return true
         } else{
             Toast.makeText(this@ShopPots, "Not enough money!", Toast.LENGTH_SHORT).show()
@@ -158,5 +159,13 @@ class ShopPots : AppCompatActivity() {
         Log.i("PotBought", "bought " + pot + "!")
         Toast.makeText(this@ShopPots, "You bought a pot!", Toast.LENGTH_SHORT).show()
     }
+
+    fun storeItemBought(preferences: SharedPreferences){
+        with (preferences.edit()) {
+            putInt("TotalItems", preferences.getInt("TotalItems", 0) + 1)
+            apply()
+        }
+    }
+
 
 }
