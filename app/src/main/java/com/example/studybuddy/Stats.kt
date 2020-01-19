@@ -9,4 +9,9 @@ class Stats : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stats)
     }
+
+    override fun onResume() {
+        super.onResume()
+
+    }
 }

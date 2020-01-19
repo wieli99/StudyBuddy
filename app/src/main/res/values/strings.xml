@@ -37,4 +37,15 @@
     <string name="studdy_buddy_default_name">Frederick</string>
     <string name="settings_image_description">An image of a settings wheel</string>
     <string name="settings_title">Settings</string>
+    <string name="stats_title">Stats</string>
+    <string name="stats_total_time_title">Total time learned</string>
+    <string name="stats_total_time">0 min</string>
+    <string name="stats_total_sessions_title">Total sessions completed</string>
+    <string name="stats_total_sessions">0 sessions</string>
+    <string name="stats_total_money_title">Total money earned</string>
+    <string name="stats_total_money">0c</string>
+    <string name="stats_avg_session_length_title">Average session length</string>
+    <string name="stats_avg_session_length">0 min</string>
+    <string name="stats_total_items_bought">0 items</string>
+    <string name="stats_total_items_bought_title">Total items bought</string>
 </resources>

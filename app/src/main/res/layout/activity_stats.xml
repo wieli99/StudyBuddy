@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true" >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/wallpaper"
     tools:context=".Stats">
 
@@ -13,11 +18,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_alignParentTop="true"
-        android:background="@drawable/rounded_corners_light_gray"
+        android:background="@drawable/rounded_corners"
         android:elevation="5dp"
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/statsTitle"
         app:layout_constraintEnd_toStartOf="@+id/guideline21"
-        app:layout_constraintStart_toStartOf="@+id/guideline20" />
+        app:layout_constraintStart_toStartOf="@+id/guideline20"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline20"
@@ -34,16 +41,224 @@
         app:layout_constraintGuide_percent="0.9" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/statsTitle"
         android:layout_width="0dp"
         android:layout_height="88dp"
         android:layout_marginTop="28dp"
         android:elevation="6dp"
-        android:text="Stats"
+        android:text="@string/stats_title"
         android:textAlignment="center"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <View
+        android:id="@+id/rectangleStatsTime"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corners_light_gray"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/guideline21"
+        app:layout_constraintStart_toStartOf="@+id/guideline20"
+        app:layout_constraintTop_toBottomOf="@+id/rectangleTopStats" />
+
+    <TextView
+        android:id="@+id/statsTotalTimeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:text="@string/stats_total_time_title"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleStatsTime"
+        app:layout_constraintStart_toStartOf="@+id/rectangleStatsTime"
+        app:layout_constraintTop_toTopOf="@+id/rectangleStatsTime" />
+
+    <TextView
+        android:id="@+id/statsTotalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="6dp"
+        android:text="@string/stats_total_time"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleStatsTime"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleStatsTime"
+        app:layout_constraintStart_toStartOf="@+id/rectangleStatsTime"
+        app:layout_constraintTop_toBottomOf="@+id/statsTotalTimeTitle" />
+
+    <View
+        android:id="@+id/rectangleStatsSessions"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corners_light_gray"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/guideline21"
+        app:layout_constraintStart_toStartOf="@+id/guideline20"
+        app:layout_constraintTop_toBottomOf="@+id/rectangleStatsTime" />
+
+    <TextView
+        android:id="@+id/statsTotalSessionsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:text="@string/stats_total_sessions_title"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleStatsSessions"
+        app:layout_constraintStart_toStartOf="@+id/rectangleStatsSessions"
+        app:layout_constraintTop_toTopOf="@+id/rectangleStatsSessions" />
+
+    <TextView
+        android:id="@+id/statsTotalSessions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="6dp"
+        android:text="@string/stats_total_sessions"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleStatsSessions"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleStatsSessions"
+        app:layout_constraintStart_toStartOf="@+id/rectangleStatsSessions"
+        app:layout_constraintTop_toBottomOf="@+id/statsTotalSessionsTitle" />
+
+    <View
+        android:id="@+id/rectangleStatsTotalMoney"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corners_light_gray"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/guideline21"
+        app:layout_constraintStart_toStartOf="@+id/guideline20"
+        app:layout_constraintTop_toBottomOf="@+id/rectangleStatsSessions" />
+
+    <TextView
+        android:id="@+id/statsTotalMoneyTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:text="@string/stats_total_money_title"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleStatsTotalMoney"
+        app:layout_constraintStart_toStartOf="@+id/rectangleStatsTotalMoney"
+        app:layout_constraintTop_toTopOf="@+id/rectangleStatsTotalMoney" />
+
+    <TextView
+        android:id="@+id/statsTotalMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="6dp"
+        android:text="@string/stats_total_money"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleStatsTotalMoney"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleStatsTotalMoney"
+        app:layout_constraintStart_toStartOf="@+id/rectangleStatsTotalMoney"
+        app:layout_constraintTop_toBottomOf="@+id/statsTotalMoneyTitle" />
+
+    <View
+        android:id="@+id/rectangleStatsAvgSessionLength"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corners_light_gray"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/guideline21"
+        app:layout_constraintStart_toStartOf="@+id/guideline20"
+        app:layout_constraintTop_toBottomOf="@+id/rectangleStatsTotalMoney" />
+
+    <TextView
+        android:id="@+id/statsAvgSessionLengthTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:text="@string/stats_avg_session_length_title"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleStatsAvgSessionLength"
+        app:layout_constraintStart_toStartOf="@+id/rectangleStatsAvgSessionLength"
+        app:layout_constraintTop_toTopOf="@+id/rectangleStatsAvgSessionLength" />
+
+    <TextView
+        android:id="@+id/statsAvgSessionLength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="6dp"
+        android:text="@string/stats_avg_session_length"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleStatsAvgSessionLength"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleStatsAvgSessionLength"
+        app:layout_constraintStart_toStartOf="@+id/rectangleStatsAvgSessionLength"
+        app:layout_constraintTop_toBottomOf="@+id/statsAvgSessionLengthTitle" />
+
+    <View
+        android:id="@+id/rectangleStatsTotalItemsBought"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corners_light_gray"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/guideline21"
+        app:layout_constraintStart_toStartOf="@+id/guideline20"
+        app:layout_constraintTop_toBottomOf="@+id/rectangleStatsAvgSessionLength" />
+
+    <TextView
+        android:id="@+id/statsTotalItemsBoughtTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:text="@string/stats_total_items_bought_title"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleStatsTotalItemsBought"
+        app:layout_constraintStart_toStartOf="@+id/rectangleStatsTotalItemsBought"
+        app:layout_constraintTop_toTopOf="@+id/rectangleStatsTotalItemsBought" />
+
+    <TextView
+        android:id="@+id/statsTotalItemsBought"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="6dp"
+        android:text="@string/stats_total_items_bought"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleStatsTotalItemsBought"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleStatsTotalItemsBought"
+        app:layout_constraintStart_toStartOf="@+id/rectangleStatsTotalItemsBought"
+        app:layout_constraintTop_toBottomOf="@+id/statsTotalItemsBoughtTitle" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
