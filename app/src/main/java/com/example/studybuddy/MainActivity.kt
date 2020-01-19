@@ -64,6 +64,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, Settings::class.java))
         }
 
+        val backgroundsBtn = findViewById<Button>(R.id.backgroundsButtonMain)
+        //To navigate to Backgrounds selection
+        backgroundsBtn.setOnClickListener{
+            startActivity(Intent(this, Backgrounds::class.java))
+        }
+
     }
 
 

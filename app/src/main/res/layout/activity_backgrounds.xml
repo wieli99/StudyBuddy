@@ -76,7 +76,7 @@ android:fillViewport="true" >
         app:layout_constraintEnd_toEndOf="@+id/backgroundImage"
         app:layout_constraintStart_toStartOf="@+id/backgroundImage"
         app:layout_constraintTop_toTopOf="@+id/backgroundImage"
-        app:srcCompat="@drawable/Lock" />
+        app:srcCompat="@drawable/lock" />
 
     <Button
         android:id="@+id/selectBackgroundButton"
@@ -126,7 +126,7 @@ android:fillViewport="true" >
         app:layout_constraintEnd_toEndOf="@+id/backgroundImage2"
         app:layout_constraintStart_toStartOf="@+id/backgroundImage2"
         app:layout_constraintTop_toTopOf="@+id/backgroundImage2"
-        app:srcCompat="@drawable/Lock" />
+        app:srcCompat="@drawable/lock" />
 
     <Button
         android:id="@+id/selectBackgroundButton2"
@@ -176,7 +176,7 @@ android:fillViewport="true" >
         app:layout_constraintEnd_toEndOf="@+id/backgroundImage3"
         app:layout_constraintStart_toStartOf="@+id/backgroundImage3"
         app:layout_constraintTop_toTopOf="@+id/backgroundImage3"
-        app:srcCompat="@drawable/Lock" />
+        app:srcCompat="@drawable/lock" />
 
     <Button
         android:id="@+id/selectBackgroundButton3"
@@ -226,7 +226,7 @@ android:fillViewport="true" >
         app:layout_constraintEnd_toEndOf="@+id/backgroundImage4"
         app:layout_constraintStart_toStartOf="@+id/backgroundImage4"
         app:layout_constraintTop_toTopOf="@+id/backgroundImage4"
-        app:srcCompat="@drawable/Lock" />
+        app:srcCompat="@drawable/lock" />
 
     <Button
         android:id="@+id/selectBackgroundButton4"
@@ -276,7 +276,7 @@ android:fillViewport="true" >
         app:layout_constraintEnd_toEndOf="@+id/backgroundImage5"
         app:layout_constraintStart_toStartOf="@+id/backgroundImage5"
         app:layout_constraintTop_toTopOf="@+id/backgroundImage5"
-        app:srcCompat="@drawable/Lock" />
+        app:srcCompat="@drawable/lock" />
 
     <Button
         android:id="@+id/selectBackgroundButton5"
@@ -326,7 +326,7 @@ android:fillViewport="true" >
         app:layout_constraintEnd_toEndOf="@+id/backgroundImage6"
         app:layout_constraintStart_toStartOf="@+id/backgroundImage6"
         app:layout_constraintTop_toTopOf="@+id/backgroundImage6"
-        app:srcCompat="@drawable/Lock" />
+        app:srcCompat="@drawable/lock" />
 
     <Button
         android:id="@+id/selectBackgroundButton6"
