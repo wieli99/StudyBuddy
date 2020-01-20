@@ -8,6 +8,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 
 class Backgrounds : AppCompatActivity() {
 
@@ -21,6 +23,8 @@ class Backgrounds : AppCompatActivity() {
         checkBackgroundsPurchaseStatus(prefsShopBackgrounds)
 
         setOnclickListeners(prefsShopBackgrounds)
+
+        setBackground()
     }
 
     private fun setOnclickListeners(prefsShopBackgrounds: SharedPreferences){
@@ -142,5 +146,11 @@ class Backgrounds : AppCompatActivity() {
         for (btn in btnList){
             btn.setText(getString(R.string.select))
         }
+    }
+
+    fun setBackground(){
+        val mainPrefs = getSharedPreferences("Main", 0)
+        findViewById<ConstraintLayout>(R.id.BackgroundsCL).setBackgroundResource(R.drawable.background2) //give ID to layout in XML
+        //TODO: Amke BG depend on selection
     }
 }
