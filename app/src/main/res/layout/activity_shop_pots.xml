@@ -80,7 +80,7 @@
             android:elevation="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangleShop"
             app:layout_constraintStart_toStartOf="@+id/potsBackRectangleShop"
-            app:srcCompat="@drawable/pot" />
+            app:srcCompat="@drawable/pot1" />
 
         <Button
             android:id="@+id/buyPotButton"
@@ -118,7 +118,7 @@
             android:elevation="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangleShop2"
             app:layout_constraintStart_toStartOf="@+id/potsBackRectangleShop2"
-            app:srcCompat="@drawable/pot" />
+            app:srcCompat="@drawable/pot2" />
 
         <Button
             android:id="@+id/buyPotButton2"
@@ -156,7 +156,7 @@
             android:elevation="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangleShop3"
             app:layout_constraintStart_toStartOf="@+id/potsBackRectangleShop3"
-            app:srcCompat="@drawable/pot" />
+            app:srcCompat="@drawable/pot3" />
 
         <Button
             android:id="@+id/buyPotButton3"
@@ -194,7 +194,7 @@
             android:elevation="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangleShop4"
             app:layout_constraintStart_toStartOf="@+id/potsBackRectangleShop4"
-            app:srcCompat="@drawable/pot" />
+            app:srcCompat="@drawable/pot4" />
 
         <Button
             android:id="@+id/buyPotButton4"
@@ -232,7 +232,7 @@
             android:elevation="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangleShop5"
             app:layout_constraintStart_toStartOf="@+id/potsBackRectangleShop5"
-            app:srcCompat="@drawable/pot" />
+            app:srcCompat="@drawable/pot5" />
 
         <Button
             android:id="@+id/buyPotButton5"
@@ -270,7 +270,7 @@
             android:elevation="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangleShop6"
             app:layout_constraintStart_toStartOf="@+id/potsBackRectangleShop6"
-            app:srcCompat="@drawable/pot" />
+            app:srcCompat="@drawable/pot6" />
 
         <Button
             android:id="@+id/buyPotButton6"
