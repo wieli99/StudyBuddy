@@ -9,7 +9,7 @@ android:fillViewport="true" >
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/wallpaper"
+    android:background="@drawable/background1"
     tools:context=".Backgrounds">
 
 
@@ -64,7 +64,7 @@ android:fillViewport="true" >
         android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangle"
         app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle"
-        app:srcCompat="@drawable/wallpaper" />
+        app:srcCompat="@drawable/background1" />
 
     <Button
         android:id="@+id/selectBackgroundButton"
@@ -102,7 +102,7 @@ android:fillViewport="true" >
         android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangle2"
         app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle2"
-        app:srcCompat="@drawable/wallpaper" />
+        app:srcCompat="@drawable/background2" />
 
     <ImageView
         android:id="@+id/padlock2"
@@ -152,7 +152,7 @@ android:fillViewport="true" >
         android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangle3"
         app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle3"
-        app:srcCompat="@drawable/wallpaper" />
+        app:srcCompat="@drawable/background3" />
 
     <ImageView
         android:id="@+id/padlock3"
@@ -202,7 +202,7 @@ android:fillViewport="true" >
         android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangle4"
         app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle4"
-        app:srcCompat="@drawable/wallpaper" />
+        app:srcCompat="@drawable/background4" />
 
     <ImageView
         android:id="@+id/padlock4"
@@ -252,7 +252,7 @@ android:fillViewport="true" >
         android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangle5"
         app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle5"
-        app:srcCompat="@drawable/wallpaper" />
+        app:srcCompat="@drawable/background5" />
 
     <ImageView
         android:id="@+id/padlock5"
@@ -302,7 +302,7 @@ android:fillViewport="true" >
         android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangle6"
         app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangle6"
-        app:srcCompat="@drawable/wallpaper" />
+        app:srcCompat="@drawable/background6" />
 
     <ImageView
         android:id="@+id/padlock6"

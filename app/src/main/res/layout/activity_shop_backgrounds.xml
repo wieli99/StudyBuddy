@@ -9,7 +9,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/wallpaper"
+    android:background="@drawable/background1"
     tools:context=".ShopBackgrounds">
 
 
@@ -76,7 +76,7 @@
         android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangleShop"
         app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangleShop"
-        app:srcCompat="@drawable/wallpaper" />
+        app:srcCompat="@drawable/background1" />
 
     <Button
         android:id="@+id/buyBackgroundButton"
@@ -114,7 +114,7 @@
         android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangleShop2"
         app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangleShop2"
-        app:srcCompat="@drawable/wallpaper" />
+        app:srcCompat="@drawable/background2" />
 
     <Button
         android:id="@+id/buyBackgroundButton2"
@@ -152,7 +152,7 @@
         android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangleShop3"
         app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangleShop3"
-        app:srcCompat="@drawable/wallpaper" />
+        app:srcCompat="@drawable/background3" />
 
     <Button
         android:id="@+id/buyBackgroundButton3"
@@ -190,7 +190,7 @@
         android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangleShop4"
         app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangleShop4"
-        app:srcCompat="@drawable/wallpaper" />
+        app:srcCompat="@drawable/background4" />
 
     <Button
         android:id="@+id/buyBackgroundButton4"
@@ -228,7 +228,7 @@
         android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangleShop5"
         app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangleShop5"
-        app:srcCompat="@drawable/wallpaper" />
+        app:srcCompat="@drawable/background5" />
 
     <Button
         android:id="@+id/buyBackgroundButton5"
@@ -260,13 +260,12 @@
         android:id="@+id/backgroundImageShop6"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="4dp"
         android:contentDescription="@string/background_image_description"
         android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="@+id/backgroundsBackRectangleShop6"
         app:layout_constraintStart_toStartOf="@+id/backgroundsBackRectangleShop6"
-        app:srcCompat="@drawable/wallpaper" />
+        app:srcCompat="@drawable/background6" />
 
     <Button
         android:id="@+id/buyBackgroundButton6"
