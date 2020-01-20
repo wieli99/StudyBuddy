@@ -64,7 +64,7 @@
             android:elevation="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangle"
             app:layout_constraintStart_toStartOf="@+id/potsBackRectangle"
-            app:srcCompat="@drawable/wallpaper" />
+            app:srcCompat="@drawable/pot" />
 
         <ImageView
             android:id="@+id/padlock"
@@ -114,7 +114,7 @@
             android:elevation="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangle2"
             app:layout_constraintStart_toStartOf="@+id/potsBackRectangle2"
-            app:srcCompat="@drawable/wallpaper" />
+            app:srcCompat="@drawable/pot" />
 
         <ImageView
             android:id="@+id/padlock2"
@@ -164,7 +164,7 @@
             android:elevation="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangle3"
             app:layout_constraintStart_toStartOf="@+id/potsBackRectangle3"
-            app:srcCompat="@drawable/wallpaper" />
+            app:srcCompat="@drawable/pot" />
 
         <ImageView
             android:id="@+id/padlock3"
@@ -214,7 +214,7 @@
             android:elevation="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangle4"
             app:layout_constraintStart_toStartOf="@+id/potsBackRectangle4"
-            app:srcCompat="@drawable/wallpaper" />
+            app:srcCompat="@drawable/pot" />
 
         <ImageView
             android:id="@+id/padlock4"
@@ -264,7 +264,7 @@
             android:elevation="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangle5"
             app:layout_constraintStart_toStartOf="@+id/potsBackRectangle5"
-            app:srcCompat="@drawable/wallpaper" />
+            app:srcCompat="@drawable/pot" />
 
         <ImageView
             android:id="@+id/padlock5"
@@ -314,7 +314,7 @@
             android:elevation="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/potsBackRectangle6"
             app:layout_constraintStart_toStartOf="@+id/potsBackRectangle6"
-            app:srcCompat="@drawable/wallpaper" />
+            app:srcCompat="@drawable/pot" />
 
         <ImageView
             android:id="@+id/padlock6"
