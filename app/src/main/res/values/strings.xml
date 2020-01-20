@@ -52,4 +52,9 @@
     <string name="backgrounds_title">Backgrounds</string>
     <string name="padlock_description">A padlock that indicates that you have not yet bought this item</string>
     <string name="pots_title">Pots</string>
+    <string name="active">Active</string>
+    <string name="is_already_bought">is already bought</string>
+    <string name="is_not_yet_bought">is not yet bought</string>
+    <string name="select">Select</string>
+    <string name="toast_purchase_in_shop">You can purchase this in the shop!</string>
 </resources>
