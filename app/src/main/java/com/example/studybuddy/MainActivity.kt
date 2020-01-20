@@ -70,6 +70,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, Backgrounds::class.java))
         }
 
+        val potsBtn = findViewById<Button>(R.id.potsButtonMain)
+        //To navigate to Pots selection
+        potsBtn.setOnClickListener{
+            startActivity(Intent(this, Pots::class.java))
+        }
+
     }
 
 

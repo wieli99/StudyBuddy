@@ -66,18 +66,6 @@
             app:layout_constraintStart_toStartOf="@+id/potsBackRectangle"
             app:srcCompat="@drawable/pot" />
 
-        <ImageView
-            android:id="@+id/padlock"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:contentDescription="@string/padlock_description"
-            android:elevation="7dp"
-            app:layout_constraintBottom_toBottomOf="@+id/potImage"
-            app:layout_constraintEnd_toEndOf="@+id/potImage"
-            app:layout_constraintStart_toStartOf="@+id/potImage"
-            app:layout_constraintTop_toTopOf="@+id/potImage"
-            app:srcCompat="@drawable/lock" />
-
         <Button
             android:id="@+id/selectPotButton"
             android:layout_width="130dp"
