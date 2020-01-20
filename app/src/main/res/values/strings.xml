@@ -51,4 +51,5 @@
     <string name="select_button">Select</string>
     <string name="backgrounds_title">Backgrounds</string>
     <string name="padlock_description">A padlock that indicates that you have not yet bought this item</string>
+    <string name="pots_title">Pots</string>
 </resources>
