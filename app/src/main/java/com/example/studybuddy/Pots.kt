@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 
 class Pots : AppCompatActivity() {
 
@@ -19,9 +20,10 @@ class Pots : AppCompatActivity() {
 
         checkPotsPurchaseStatus(prefsShopPots)
 
+        setOnclickListeners(prefsShopPots)
     }
 
-    private fun setOnclickListeners(){
+    private fun setOnclickListeners(prefsShopPots: SharedPreferences){
         val prefsMain = getSharedPreferences("Main", 0)
         val button = findViewById<Button>(R.id.selectPotButton)
         val button2 = findViewById<Button>(R.id.selectPotButton2)
@@ -30,37 +32,62 @@ class Pots : AppCompatActivity() {
         val button5 = findViewById<Button>(R.id.selectPotButton5)
         val button6 = findViewById<Button>(R.id.selectPotButton6)
 
+        //Choose the currently active Pot
+        getActivePot(prefsMain, listOf<Button>(button, button2, button3, button4, button5, button6))
+
         button.setOnClickListener{
             setActivePot("pot1", prefsMain)
+            deselectAllPots(listOf(button, button2, button3, button4, button5, button6))
+            button.setText("Active")
         }
 
         button2.setOnClickListener{
-            if (checkIfPotIsAlreadyPurchased("pot2", prefsMain)){
+            if (checkIfPotIsAlreadyPurchased("pot2", prefsShopPots)){
                 setActivePot("pot2", prefsMain)
+                deselectAllPots(listOf(button, button2, button3, button4, button5, button6))
+                button2.setText("Active")
+            } else{
+                Toast.makeText(this@Pots, "You can purchase this in the shop!", Toast.LENGTH_SHORT).show()
             }
         }
 
         button3.setOnClickListener{
-            if (checkIfPotIsAlreadyPurchased("pot3", prefsMain)){
+            if (checkIfPotIsAlreadyPurchased("pot3", prefsShopPots)){
                 setActivePot("pot3", prefsMain)
+                deselectAllPots(listOf(button, button2, button3, button4, button5, button6))
+                button3.setText("Active")
+            } else{
+                Toast.makeText(this@Pots, "You can purchase this in the shop!", Toast.LENGTH_SHORT).show()
             }
         }
 
         button4.setOnClickListener{
-            if (checkIfPotIsAlreadyPurchased("pot4", prefsMain)){
+            if (checkIfPotIsAlreadyPurchased("pot4", prefsShopPots)){
                 setActivePot("pot4", prefsMain)
+                deselectAllPots(listOf(button, button2, button3, button4, button5, button6))
+                button4.setText("Active")
+            } else{
+                Toast.makeText(this@Pots, "You can purchase this in the shop!", Toast.LENGTH_SHORT).show()
             }
         }
 
         button5.setOnClickListener{
-            if (checkIfPotIsAlreadyPurchased("pot5", prefsMain)){
+            if (checkIfPotIsAlreadyPurchased("pot5", prefsShopPots)){
                 setActivePot("pot5", prefsMain)
+                deselectAllPots(listOf(button, button2, button3, button4, button5, button6))
+                button5.setText("Active")
+            } else{
+                Toast.makeText(this@Pots, "You can purchase this in the shop!", Toast.LENGTH_SHORT).show()
             }
         }
 
         button6.setOnClickListener{
-            if (checkIfPotIsAlreadyPurchased("pot6", prefsMain)){
+            if (checkIfPotIsAlreadyPurchased("pot6", prefsShopPots)){
                 setActivePot("pot6", prefsMain)
+                deselectAllPots(listOf(button, button2, button3, button4, button5, button6))
+                button6.setText("Active")
+            } else{
+                Toast.makeText(this@Pots, "You can purchase this in the shop!", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -101,6 +128,19 @@ class Pots : AppCompatActivity() {
             Log.i("ActivePot", potName)
             putString("ActivePot", potName)
             apply()
+        }
+    }
+
+    fun getActivePot(prefsMain: SharedPreferences, btnList: List<Button>){
+        val potsMap = mapOf("pot1" to btnList[0], "pot2" to btnList[1], "pot3" to btnList[2], "pot4" to btnList[3], "pot5" to btnList[4], "pot6" to btnList[5])
+        //Set the value of the button of the currently active pot
+        Log.i("DefaultActivePot", potsMap.get(prefsMain.getString("ActivePot", "pot1")).toString())
+        potsMap.get(prefsMain.getString("ActivePot", "pot1"))?.setText("Active")
+    }
+
+    fun deselectAllPots(btnList: List<Button>){
+        for (btn in btnList){
+            btn.setText("Select")
         }
     }
 }
