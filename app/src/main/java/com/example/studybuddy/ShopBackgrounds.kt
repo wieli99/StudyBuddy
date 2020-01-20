@@ -49,13 +49,7 @@ class ShopBackgrounds : AppCompatActivity() {
 
 
         button.setOnClickListener{
-            if (!checkIfBackgroundIsAlreadyPurchased("background", prefsShopBackgrounds)){
-                if(purchaseBackground("background", prefsShopBackgrounds, 200)){
-                    setButtonText(button)
-                }
-            } else {
-                Toast.makeText(this@ShopBackgrounds, "Background already purchased", Toast.LENGTH_SHORT).show()
-            }
+            Toast.makeText(this@ShopBackgrounds, "Background already purchased", Toast.LENGTH_SHORT).show()
         }
 
         button2.setOnClickListener{

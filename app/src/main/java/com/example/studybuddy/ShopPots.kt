@@ -49,13 +49,7 @@ class ShopPots : AppCompatActivity() {
 
 
         button.setOnClickListener{
-            if (!checkIfPotIsAlreadyPurchased("pot", prefsShopPots)){
-                if(purchasePot("pot", prefsShopPots, 200)){
-                    setButtonText(button)
-                }
-            } else {
-                Toast.makeText(this@ShopPots, "Pot already purchased", Toast.LENGTH_SHORT).show()
-            }
+            Toast.makeText(this@ShopPots, "Pot already purchased", Toast.LENGTH_SHORT).show()
         }
 
         button2.setOnClickListener{
