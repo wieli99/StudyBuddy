@@ -37,9 +37,7 @@ class ShopPots : AppCompatActivity() {
         val buttonlist = listOf<Button>(button, button2, button3, button4, button5, button6)
 
         //Set Value for Button depending on purchase-state
-        if (checkIfPotIsAlreadyPurchased("pot", prefsShopPots)){
-            setButtonText(button)
-        }
+        setButtonText(button)
         for (i in 2..6){
             if (checkIfPotIsAlreadyPurchased("pot"+i, prefsShopPots)){
                 setButtonText(buttonlist[i-1])
