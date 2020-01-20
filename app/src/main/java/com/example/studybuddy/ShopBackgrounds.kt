@@ -37,9 +37,7 @@ class ShopBackgrounds : AppCompatActivity() {
         val buttonlist = listOf<Button>(button, button2, button3, button4, button5, button6)
 
         //Set Value for Button depending on purchase-state
-        if (checkIfBackgroundIsAlreadyPurchased("background", prefsShopBackgrounds)){
-            setButtonText(button)
-        }
+        setButtonText(button)
         for (i in 2..6){
             if (checkIfBackgroundIsAlreadyPurchased("background"+i, prefsShopBackgrounds)){
                 setButtonText(buttonlist[i-1])
