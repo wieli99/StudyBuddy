@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         createOnClickListeners(timer, sharedPref)
 
         setBackground()
+        setStudyBuddy(sharedPref)
     }
 
 
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         money = sharedPref.getInt("Money", 0)
         findViewById<TextView>(R.id.moneyMain).setText(sharedPref.getInt("Money", 0).toString() + "c")
         setBackground()
+        setStudyBuddy(sharedPref)
     }
 
 
@@ -129,6 +131,8 @@ class MainActivity : AppCompatActivity() {
                 money += 1
                 storeMoney(money, sharedPref)
             }
+            upgradeStudyBuddyWhenEnoughTimePassed()
+            setStudyBuddy(this@MainActivity.getSharedPreferences("Main", Context.MODE_PRIVATE))
         }
     }
 
@@ -180,9 +184,43 @@ class MainActivity : AppCompatActivity() {
         minutes = sharedPref.getInt("Time", 25)
     }
 
+
     fun setBackground(){
         val mainPrefs = getSharedPreferences("Main", 0)
         val backgroundsMap = mapOf("background1" to R.drawable.background1, "background2" to R.drawable.background2, "background3" to R.drawable.background3, "background4" to R.drawable.background4, "background5" to R.drawable.background5, "background6" to R.drawable.background6)
         findViewById<ConstraintLayout>(R.id.MainCL).setBackgroundResource(backgroundsMap.get(mainPrefs.getString("ActiveBackground", "background1"))!!) //give ID to layout in XML
+    }
+
+
+    fun setStudyBuddy(sharedPref: SharedPreferences){
+        val studyBuddyMap = mapOf("buddy1pot1" to R.drawable.buddy1_pot1, "buddy1pot2" to R.drawable.buddy1_pot2, "buddy1pot3" to R.drawable.buddy1_pot3, "buddy1pot4" to R.drawable.buddy1_pot4, "buddy1pot5" to R.drawable.buddy1_pot5, "buddy1pot6" to R.drawable.buddy1_pot6,
+            "buddy2pot1" to R.drawable.buddy2_pot1, "buddy2pot2" to R.drawable.buddy2_pot2, "buddy2pot3" to R.drawable.buddy2_pot3, "buddy2pot4" to R.drawable.buddy2_pot4, "buddy2pot5" to R.drawable.buddy2_pot5, "buddy2pot6" to R.drawable.buddy2_pot6,
+            "buddy3pot1" to R.drawable.buddy3_pot1) //TODO: fehlende graphiken
+
+        findViewById<ImageView>(R.id.studyBuddy).setImageResource(studyBuddyMap.get(sharedPref.getString("StudyBuddy", "buddy1") + sharedPref.getString("ActivePot", "pot1"))!!)
+    }
+
+
+    fun upgradeStudyBuddyWhenEnoughTimePassed(){
+        val sharedPref = this@MainActivity.getSharedPreferences("Main", Context.MODE_PRIVATE)
+        with (sharedPref.edit()) {
+            putInt("UpgradeTime", sharedPref.getInt("UpgradeTime", 0) + 1)  //TODO: Reset this on HOF entry
+            apply()
+        }
+        if (sharedPref.getInt("UpgradeTime", 1) % 7500 == 0){ //Every 7500 secs gained
+            if (sharedPref.getString("StudyBuddy", "buddy1") == "buddy1"){ //And current studybuddy is v1
+                setActiveStudyBuddy("buddy2", sharedPref)   //Upgrade to v2
+            } else if (sharedPref.getString("StudyBuddy", "buddy1") == "buddy2"){
+                setActiveStudyBuddy("buddy3", sharedPref)   //Upgrade to v2
+            }
+        }
+    }
+
+
+    fun setActiveStudyBuddy(name: String, sharedPref: SharedPreferences){
+        with (sharedPref.edit()) {
+            putString("StudyBuddy", name)
+            apply()
+        }
     }
 }
