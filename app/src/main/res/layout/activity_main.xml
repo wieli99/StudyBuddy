@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/settingsWheel"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:contentDescription="@string/settings_image_description"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -18,8 +18,8 @@
 
     <ImageView
         android:id="@+id/hallOfFameStar"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:contentDescription="@string/hall_of_fame_image_description"
         app:layout_constraintStart_toEndOf="@+id/settingsWheel"
@@ -224,13 +224,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.08" />
+        app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.22" />
+        app:layout_constraintGuide_percent="0.24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
