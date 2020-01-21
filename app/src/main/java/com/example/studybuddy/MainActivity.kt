@@ -195,7 +195,7 @@ class MainActivity : AppCompatActivity() {
     fun setStudyBuddy(sharedPref: SharedPreferences){
         val studyBuddyMap = mapOf("buddy1pot1" to R.drawable.buddy1_pot1, "buddy1pot2" to R.drawable.buddy1_pot2, "buddy1pot3" to R.drawable.buddy1_pot3, "buddy1pot4" to R.drawable.buddy1_pot4, "buddy1pot5" to R.drawable.buddy1_pot5, "buddy1pot6" to R.drawable.buddy1_pot6,
             "buddy2pot1" to R.drawable.buddy2_pot1, "buddy2pot2" to R.drawable.buddy2_pot2, "buddy2pot3" to R.drawable.buddy2_pot3, "buddy2pot4" to R.drawable.buddy2_pot4, "buddy2pot5" to R.drawable.buddy2_pot5, "buddy2pot6" to R.drawable.buddy2_pot6,
-            "buddy3pot1" to R.drawable.buddy3_pot1) //TODO: fehlende graphiken
+            "buddy3pot1" to R.drawable.buddy3_pot1, "buddy3pot2" to R.drawable.buddy3_pot2, "buddy3pot3" to R.drawable.buddy3_pot3, "buddy3pot4" to R.drawable.buddy3_pot4, "buddy3pot5" to R.drawable.buddy3_pot5, "buddy3pot6" to R.drawable.buddy3_pot6)
 
         findViewById<ImageView>(R.id.studyBuddy).setImageResource(studyBuddyMap.get(sharedPref.getString("StudyBuddy", "buddy1") + sharedPref.getString("ActivePot", "pot1"))!!)
     }
