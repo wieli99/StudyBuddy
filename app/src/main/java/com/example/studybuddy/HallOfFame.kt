@@ -1,13 +1,15 @@
 package com.example.studybuddy
 
 import android.app.Activity
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
-import java.security.AccessControlContext
 
 class HallOfFame : AppCompatActivity() {
 
@@ -17,11 +19,27 @@ class HallOfFame : AppCompatActivity() {
 
         setBackground()
 
-        val mainPrefs = getSharedPreferences("Main", 0)
+        val hallOfFameBtn = findViewById<Button>(R.id.buttonSaveToHOF)
+        hallOfFameBtn.setOnClickListener{
+            saveToHallOfFame()
+            var listView = findViewById<ListView>(R.id.listView)
+
+            val names = generateNamesArray(this@HallOfFame.getSharedPreferences("HOF", Context.MODE_PRIVATE))
+            val buddys = generateBuddyArray(this@HallOfFame.getSharedPreferences("HOF", Context.MODE_PRIVATE))
+
+            var customAdapter = CustomAdapter(this, names, buddys)
+            listView.adapter = customAdapter
+        }
+
+
+        val names = generateNamesArray(this@HallOfFame.getSharedPreferences("HOF", Context.MODE_PRIVATE))
+        val buddys = generateBuddyArray(this@HallOfFame.getSharedPreferences("HOF", Context.MODE_PRIVATE))
+
+
         var listView = findViewById<ListView>(R.id.listView)
 
 
-        var customAdapter = CustomAdapter(this)
+        var customAdapter = CustomAdapter(this, names, buddys)
         listView.adapter = customAdapter
 
 
@@ -34,13 +52,84 @@ class HallOfFame : AppCompatActivity() {
         val backgroundsMap = mapOf("background1" to R.drawable.background1, "background2" to R.drawable.background2, "background3" to R.drawable.background3, "background4" to R.drawable.background4, "background5" to R.drawable.background5, "background6" to R.drawable.background6)
         findViewById<ConstraintLayout>(R.id.HallOfFameCL).setBackgroundResource(backgroundsMap.get(mainPrefs.getString("ActiveBackground", "background1"))!!) //give ID to layout in XML
     }
+
+
+    fun saveToHallOfFame(){
+        val sharedPref = this@HallOfFame.getSharedPreferences("HOF", Context.MODE_PRIVATE)
+        val mainPrefs = getSharedPreferences("Main", 0)
+
+        with (sharedPref.edit()) {
+            putString("Buddys", sharedPref.getString("Buddys", "") + mainPrefs.getString("StudyBuddy", "buddy1") + mainPrefs.getString("ActivePot", "pot1") + "_" + mainPrefs.getString("Name", "Frederick") + ";") //Adds StudyBuddy and name to 'list'
+            apply()
+        }
+        resetStudyBuddy(mainPrefs)
+    }
+
+
+    fun resetStudyBuddy(mainPrefs: SharedPreferences){
+        with(mainPrefs.edit()) {
+            putString("StudyBuddy", "buddy1")
+            putString("Name", "Frederick")
+            apply()
+        }
+    }
+
+    fun generateNamesArray(sharedPref: SharedPreferences): ArrayList<String>{
+        var sharedPrefList = sharedPref.getString("Buddys", "")!!.split((";"))
+        Log.i("HOF Entries", sharedPrefList.toString())
+        var names = arrayListOf<String>()
+        if (sharedPrefList[0] != ""){
+            for (i in 0 until sharedPrefList!!.size-1){
+                Log.i("NameEntry", sharedPrefList[i].split("_")[1])
+                names.add(sharedPrefList[i].split("_")[1])
+            }
+        } else{
+            return arrayListOf("")
+        }
+        Log.i("Names", names.toString())
+        return names
+    }
+
+
+    fun generateBuddyArray(sharedPref: SharedPreferences): ArrayList<Int>{
+        var sharedPrefList = sharedPref.getString("Buddys", "")!!.split((";"))
+        Log.i("HOF Entries", sharedPrefList.toString())
+        var buddysNames = arrayListOf<String>()
+        if (sharedPrefList[0] != ""){
+            for (i in 0 until sharedPrefList!!.size-1){
+                Log.i("BuddyEntry", sharedPrefList[i].split("_")[0])
+                buddysNames.add(sharedPrefList[i].split("_")[0])
+            }
+        } else{
+            return arrayListOf()
+        }
+        Log.i("Buddys", buddysNames.toString())
+        return getAllHOFStudyBuddys(buddysNames)
+    }
+
+
+    fun getAllHOFStudyBuddys(buddysNames: ArrayList<String>): ArrayList<Int>{
+        val studyBuddyMap = mapOf("buddy1pot1" to R.drawable.buddy1_pot1, "buddy1pot2" to R.drawable.buddy1_pot2, "buddy1pot3" to R.drawable.buddy1_pot3, "buddy1pot4" to R.drawable.buddy1_pot4, "buddy1pot5" to R.drawable.buddy1_pot5, "buddy1pot6" to R.drawable.buddy1_pot6,
+            "buddy2pot1" to R.drawable.buddy2_pot1, "buddy2pot2" to R.drawable.buddy2_pot2, "buddy2pot3" to R.drawable.buddy2_pot3, "buddy2pot4" to R.drawable.buddy2_pot4, "buddy2pot5" to R.drawable.buddy2_pot5, "buddy2pot6" to R.drawable.buddy2_pot6,
+            "buddy3pot1" to R.drawable.buddy3_pot1, "buddy3pot2" to R.drawable.buddy3_pot2, "buddy3pot3" to R.drawable.buddy3_pot3, "buddy3pot4" to R.drawable.buddy3_pot4, "buddy3pot5" to R.drawable.buddy3_pot5, "buddy3pot6" to R.drawable.buddy3_pot6)
+
+        var buddys = arrayListOf<Int>()
+        for (buddy in buddysNames){
+            buddys.add(studyBuddyMap.get(buddy)!!)
+        }
+        Log.i("BuddysObjects", buddys.toString())
+        return buddys
+    }
+
 }
 
-class CustomAdapter(private val context: Activity): BaseAdapter() {
 
-    var names = arrayOf("Frederick", "Lisa", "Tom", "Hubert", "Michelle", "Elke", "Nina", "Florian")
-    var studyBuddys = intArrayOf(R.drawable.buddy1_pot1, R.drawable.buddy3_pot1, R.drawable.buddy2_pot4, R.drawable.buddy1_pot6, R.drawable.buddy1_pot1, R.drawable.buddy3_pot1, R.drawable.buddy2_pot4, R.drawable.buddy1_pot6)
 
+
+class CustomAdapter(private val context: Activity, namesList: ArrayList<String>, studyBuddysList: ArrayList<Int>): BaseAdapter() {
+
+    var names = namesList
+    var studyBuddys = studyBuddysList
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var inflater = context.layoutInflater
