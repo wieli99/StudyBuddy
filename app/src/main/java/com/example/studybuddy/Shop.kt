@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class Shop : AppCompatActivity() {
 
@@ -24,5 +25,14 @@ class Shop : AppCompatActivity() {
             val intent = Intent(this, ShopBackgrounds::class.java)
             startActivity(intent)
         }
+
+        setBackground()
+    }
+
+
+    fun setBackground(){
+        val mainPrefs = getSharedPreferences("Main", 0)
+        val backgroundsMap = mapOf("background1" to R.drawable.background1, "background2" to R.drawable.background2, "background3" to R.drawable.background3, "background4" to R.drawable.background4, "background5" to R.drawable.background5, "background6" to R.drawable.background6)
+        findViewById<ConstraintLayout>(R.id.shopCL).setBackgroundResource(backgroundsMap.get(mainPrefs.getString("ActiveBackground", "background1"))!!) //give ID to layout in XML
     }
 }

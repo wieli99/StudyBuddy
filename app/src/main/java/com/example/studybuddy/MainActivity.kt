@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.SystemClock
 import android.util.Log
 import android.widget.*
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class MainActivity : AppCompatActivity() {
     var reachedZero: Boolean = false
@@ -37,6 +38,8 @@ class MainActivity : AppCompatActivity() {
 
 
         createOnClickListeners(timer, sharedPref)
+
+        setBackground()
     }
 
 
@@ -48,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         setTimerTime(sharedPref)
         money = sharedPref.getInt("Money", 0)
         findViewById<TextView>(R.id.moneyMain).setText(sharedPref.getInt("Money", 0).toString() + "c")
+        setBackground()
     }
 
 
@@ -174,5 +178,11 @@ class MainActivity : AppCompatActivity() {
 
     fun setTimerTime(sharedPref: SharedPreferences){
         minutes = sharedPref.getInt("Time", 25)
+    }
+
+    fun setBackground(){
+        val mainPrefs = getSharedPreferences("Main", 0)
+        val backgroundsMap = mapOf("background1" to R.drawable.background1, "background2" to R.drawable.background2, "background3" to R.drawable.background3, "background4" to R.drawable.background4, "background5" to R.drawable.background5, "background6" to R.drawable.background6)
+        findViewById<ConstraintLayout>(R.id.MainCL).setBackgroundResource(backgroundsMap.get(mainPrefs.getString("ActiveBackground", "background1"))!!) //give ID to layout in XML
     }
 }

@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class ShopPots : AppCompatActivity() {
 
@@ -25,6 +26,8 @@ class ShopPots : AppCompatActivity() {
 
         //Set Money value
         findViewById<TextView>(R.id.moneyPotsShop).setText(prefsMain.getInt("Money", 0).toString() + "c")
+
+        setBackground()
 
         //Buttons to buy the pots
         val button = findViewById<Button>(R.id.buyPotButton)
@@ -160,4 +163,9 @@ class ShopPots : AppCompatActivity() {
     }
 
 
+    fun setBackground(){
+        val mainPrefs = getSharedPreferences("Main", 0)
+        val backgroundsMap = mapOf("background1" to R.drawable.background1, "background2" to R.drawable.background2, "background3" to R.drawable.background3, "background4" to R.drawable.background4, "background5" to R.drawable.background5, "background6" to R.drawable.background6)
+        findViewById<ConstraintLayout>(R.id.shopPotsCL).setBackgroundResource(backgroundsMap.get(mainPrefs.getString("ActiveBackground", "background1"))!!) //give ID to layout in XML
+    }
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class Stats : AppCompatActivity() {
 
@@ -11,11 +12,7 @@ class Stats : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stats)
         loadStatsValues()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        loadStatsValues()
+        setBackground()
     }
 
     fun loadStatsValues(){
@@ -38,5 +35,11 @@ class Stats : AppCompatActivity() {
         Log.i("TotalMoney", (prefsMain.getInt("TotalMoney", 0)).toString() + "c")
         Log.i("AvgSession", (prefsMain.getInt("TotalMoney", 0) * 10 / 60 / prefsMain.getInt("TotalSessions", 1)).toString() + " min")
         Log.i("TotalItems", (prefsMain.getInt("TODO", 0) * 10).toString() + " items")
+    }
+
+    fun setBackground(){
+        val mainPrefs = getSharedPreferences("Main", 0)
+        val backgroundsMap = mapOf("background1" to R.drawable.background1, "background2" to R.drawable.background2, "background3" to R.drawable.background3, "background4" to R.drawable.background4, "background5" to R.drawable.background5, "background6" to R.drawable.background6)
+        findViewById<ConstraintLayout>(R.id.statsCL).setBackgroundResource(backgroundsMap.get(mainPrefs.getString("ActiveBackground", "background1"))!!) //give ID to layout in XML
     }
 }

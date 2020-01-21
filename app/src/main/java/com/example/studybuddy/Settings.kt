@@ -10,12 +10,15 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class Settings : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+
+        setBackground()
 
         //Read the sharedPreferences money variable
         val prefsMain = getSharedPreferences("Main", 0)
@@ -39,6 +42,7 @@ class Settings : AppCompatActivity() {
         }
     }
 
+
     fun storeName(sharedPref: SharedPreferences){
         with (sharedPref.edit()) {
             putString("Name", findViewById<EditText>(R.id.editNameText).text.toString())
@@ -47,11 +51,19 @@ class Settings : AppCompatActivity() {
         Toast.makeText(this@Settings, "Name setting saved!", Toast.LENGTH_SHORT).show()
     }
 
+
     fun storeTime(sharedPref: SharedPreferences){
         with (sharedPref.edit()) {
             putInt("Time", findViewById<EditText>(R.id.editTimeText).text.toString().toInt()) //Seems stupid... but this is the way
             apply()
         }
         Toast.makeText(this@Settings, "Time setting saved!", Toast.LENGTH_SHORT).show()
+    }
+
+
+    fun setBackground(){
+        val mainPrefs = getSharedPreferences("Main", 0)
+        val backgroundsMap = mapOf("background1" to R.drawable.background1, "background2" to R.drawable.background2, "background3" to R.drawable.background3, "background4" to R.drawable.background4, "background5" to R.drawable.background5, "background6" to R.drawable.background6)
+        findViewById<ConstraintLayout>(R.id.settingsCL).setBackgroundResource(backgroundsMap.get(mainPrefs.getString("ActiveBackground", "background1"))!!) //give ID to layout in XML
     }
 }
