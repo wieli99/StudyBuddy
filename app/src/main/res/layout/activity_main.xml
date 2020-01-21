@@ -16,6 +16,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/settings_wheel" />
 
+    <ImageView
+        android:id="@+id/hallOfFameStar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/hall_of_fame_image_description"
+        app:layout_constraintStart_toEndOf="@+id/settingsWheel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hall_of_fame" />
+
     <View
         android:id="@+id/rectangleTopMainMoney"
         android:layout_width="75dp"

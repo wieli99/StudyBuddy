@@ -57,4 +57,7 @@
     <string name="is_not_yet_bought">is not yet bought</string>
     <string name="select">Select</string>
     <string name="toast_purchase_in_shop">You can purchase this in the shop!</string>
+    <string name="hall_of_fame_image_description">An image of a star for the hall of fame</string>
+    <string name="hof_title">Hall Of Fame</string>
+    <string name="add_to_hof">Add current StudyBuddy</string>
 </resources>

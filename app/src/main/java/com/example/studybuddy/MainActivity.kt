@@ -65,9 +65,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         val settingsBtn = findViewById<ImageView>(R.id.settingsWheel)
-        //To Navigate to Settings
+        //To navigate to Settings
         settingsBtn.setOnClickListener{
             startActivity(Intent(this, Settings::class.java))
+        }
+
+        val hallOfFameBtn = findViewById<ImageView>(R.id.hallOfFameStar)
+        //To navigate to Hall Of Fame
+        hallOfFameBtn.setOnClickListener{
+            startActivity(Intent(this, HallOfFame::class.java))
         }
 
         val backgroundsBtn = findViewById<Button>(R.id.backgroundsButtonMain)

@@ -1,0 +1,27 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingTop="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/HOFImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/buddy3_pot2" />
+
+        <TextView
+            android:id="@+id/HOFName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="false"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="18dp"
+            android:layout_toEndOf="@+id/HOFImage"
+            android:text="Frederick"
+            android:textSize="30sp" />
+    </RelativeLayout>
+</RelativeLayout>
