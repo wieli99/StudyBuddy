@@ -16,6 +16,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/settings_wheel" />
 
+    <View
+        android:id="@+id/rectangleTopMainMoney"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/rounded_corners_light_gray"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/moneyMain"
+        app:layout_constraintEnd_toEndOf="@+id/moneyMain"
+        app:layout_constraintStart_toStartOf="@+id/moneyMain"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/moneyMain"
         android:layout_width="wrap_content"
@@ -100,10 +113,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/studybuddy1" />
 
+    <View
+        android:id="@+id/rectangleStudyBuddyName"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/rounded_corners_light_gray"
+        android:elevation="5dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/studyBuddyName"
+        app:layout_constraintEnd_toEndOf="@+id/studyBuddyName"
+        app:layout_constraintStart_toStartOf="@+id/studyBuddyName"
+        app:layout_constraintTop_toTopOf="@+id/studyBuddyName" />
+
     <TextView
         android:id="@+id/studyBuddyName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:elevation="6dp"
         android:text="@string/studdy_buddy_default_name"
         app:layout_constraintEnd_toEndOf="@+id/studyBuddy"
         app:layout_constraintStart_toStartOf="@+id/studyBuddy"
