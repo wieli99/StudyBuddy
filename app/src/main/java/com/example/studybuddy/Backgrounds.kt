@@ -133,6 +133,7 @@ class Backgrounds : AppCompatActivity() {
             putString("ActiveBackground", backgroundName)
             apply()
         }
+        setBackground()
     }
 
     fun getActiveBackground(prefsMain: SharedPreferences, btnList: List<Button>){
@@ -150,7 +151,7 @@ class Backgrounds : AppCompatActivity() {
 
     fun setBackground(){
         val mainPrefs = getSharedPreferences("Main", 0)
-        findViewById<ConstraintLayout>(R.id.BackgroundsCL).setBackgroundResource(R.drawable.background2) //give ID to layout in XML
-        //TODO: Amke BG depend on selection
+        val backgroundsMap = mapOf("background1" to R.drawable.background1, "background2" to R.drawable.background2, "background3" to R.drawable.background3, "background4" to R.drawable.background4, "background5" to R.drawable.background5, "background6" to R.drawable.background6)
+        findViewById<ConstraintLayout>(R.id.BackgroundsCL).setBackgroundResource(backgroundsMap.get(mainPrefs.getString("ActiveBackground", "background1"))!!) //give ID to layout in XML
     }
 }
