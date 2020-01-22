@@ -64,4 +64,14 @@
     <string name="session_end_text">You should take a short brake now!</string>
     <string name="alert_hof_title">Are you sure you want to move your current StudyBuddy?</string>
     <string name="alert_hof_text">This will reset your StudyBuddy (but you will keep all items)</string>
+    <string name="setting_saved_name_toast">Name setting saved!</string>
+    <string name="setting_saved_time_toast">Time setting saved!</string>
+    <string name="background_already_purchased_toast">Background already purchased</string>
+    <string name="not_enough_money">Not enough money!</string>
+    <string name="bought_a_background">You bought a background!</string>
+    <string name="pot_already_purchased">Pot already purchased</string>
+    <string name="bought_a_pot">You bought a pot!</string>
+    <string name="stats_min">min</string>
+    <string name="stats_sessions">sessions</string>
+    <string name="stats_items">items</string>
 </resources>

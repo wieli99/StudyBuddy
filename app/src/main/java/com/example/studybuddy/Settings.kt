@@ -48,7 +48,7 @@ class Settings : AppCompatActivity() {
             putString("Name", findViewById<EditText>(R.id.editNameText).text.toString())
             apply()
         }
-        Toast.makeText(this@Settings, "Name setting saved!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@Settings, getString(R.string.setting_saved_name_toast), Toast.LENGTH_SHORT).show()
     }
 
 
@@ -57,7 +57,7 @@ class Settings : AppCompatActivity() {
             putInt("Time", findViewById<EditText>(R.id.editTimeText).text.toString().toInt()) //Seems stupid... but this is the way
             apply()
         }
-        Toast.makeText(this@Settings, "Time setting saved!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@Settings, getString(R.string.setting_saved_time_toast), Toast.LENGTH_SHORT).show()
     }
 
 

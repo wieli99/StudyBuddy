@@ -50,7 +50,7 @@ class ShopBackgrounds : AppCompatActivity() {
 
 
         button.setOnClickListener{
-            Toast.makeText(this@ShopBackgrounds, "Background already purchased", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@ShopBackgrounds, getString(R.string.background_already_purchased_toast), Toast.LENGTH_SHORT).show()
         }
 
         button2.setOnClickListener{
@@ -59,7 +59,7 @@ class ShopBackgrounds : AppCompatActivity() {
                     setButtonText(button2)
                 }
             } else {
-                Toast.makeText(this@ShopBackgrounds, "Background already purchased", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ShopBackgrounds, getString(R.string.background_already_purchased_toast), Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -69,7 +69,7 @@ class ShopBackgrounds : AppCompatActivity() {
                         setButtonText(button3)
                     }
             } else {
-                Toast.makeText(this@ShopBackgrounds, "Background already purchased", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ShopBackgrounds, getString(R.string.background_already_purchased_toast), Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -79,7 +79,7 @@ class ShopBackgrounds : AppCompatActivity() {
                     setButtonText(button4)
                 }
             } else {
-                Toast.makeText(this@ShopBackgrounds, "Background already purchased", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ShopBackgrounds, getString(R.string.background_already_purchased_toast), Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -89,7 +89,7 @@ class ShopBackgrounds : AppCompatActivity() {
                     setButtonText(button5)
                 }
             } else {
-                Toast.makeText(this@ShopBackgrounds, "Background already purchased", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ShopBackgrounds, getString(R.string.background_already_purchased_toast), Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -99,7 +99,7 @@ class ShopBackgrounds : AppCompatActivity() {
                     setButtonText(button6)
                 }
             } else {
-                Toast.makeText(this@ShopBackgrounds, "Background already purchased", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ShopBackgrounds, getString(R.string.background_already_purchased_toast), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -113,10 +113,10 @@ class ShopBackgrounds : AppCompatActivity() {
 
     fun checkIfBackgroundIsAlreadyPurchased(background: String, sharedPref: SharedPreferences): Boolean{
         if (sharedPref.getBoolean(background, false)){
-            Log.i("BackgroundBoughtStatus", background + " is already bought")
+            Log.i("BackgroundBoughtStatus", background + getString(R.string.is_already_bought))
             return true
         }
-        Log.i("BackgroundBoughtStatus", background + " is not yet bought")
+        Log.i("BackgroundBoughtStatus", background + getString(R.string.is_not_yet_bought))
         return false
     }
 
@@ -130,7 +130,7 @@ class ShopBackgrounds : AppCompatActivity() {
             storeItemBought(mainPrefs)
             return true
         } else{
-            Toast.makeText(this@ShopBackgrounds, "Not enough money!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@ShopBackgrounds, getString(R.string.not_enough_money), Toast.LENGTH_SHORT).show()
             return false
         }
     }
@@ -154,7 +154,7 @@ class ShopBackgrounds : AppCompatActivity() {
         }
 
         Log.i("BackgroundBought", "bought " + backgrond + "!")
-        Toast.makeText(this@ShopBackgrounds, "You bought a background!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@ShopBackgrounds, getString(R.string.bought_a_background), Toast.LENGTH_SHORT).show()
     }
 
     fun storeItemBought(preferences: SharedPreferences){
