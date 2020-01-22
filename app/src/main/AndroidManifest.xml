@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.studybuddy">
+    package="com.wieliFritz.studybuddy">
 
     <application
         android:allowBackup="true"
@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HallOfFame"></activity>
-        <activity android:name=".Pots" />
-        <activity android:name=".Backgrounds" />
-        <activity android:name=".Stats" />
-        <activity android:name=".Settings" />
-        <activity android:name=".ShopBackgrounds" />
-        <activity android:name=".Shop" />
-        <activity android:name=".ShopPots" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.wieliFritz.studybuddy.HallOfFame"></activity>
+        <activity android:name="com.wieliFritz.studybuddy.Pots" />
+        <activity android:name="com.wieliFritz.studybuddy.Backgrounds" />
+        <activity android:name="com.wieliFritz.studybuddy.Stats" />
+        <activity android:name="com.wieliFritz.studybuddy.Settings" />
+        <activity android:name="com.wieliFritz.studybuddy.ShopBackgrounds" />
+        <activity android:name="com.wieliFritz.studybuddy.Shop" />
+        <activity android:name="com.wieliFritz.studybuddy.ShopPots" />
+        <activity android:name="com.wieliFritz.studybuddy.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
