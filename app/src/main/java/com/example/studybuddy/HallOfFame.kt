@@ -75,6 +75,11 @@ class HallOfFame : AppCompatActivity() {
             putString("Buddys", sharedPref.getString("Buddys", "") + mainPrefs.getString("StudyBuddy", "buddy1") + mainPrefs.getString("ActivePot", "pot1") + "_" + mainPrefs.getString("Name", "Frederick") + ";") //Adds StudyBuddy and name to 'list'
             apply()
         }
+
+        with(mainPrefs.edit()) {
+            putInt("HOFEntries", mainPrefs.getInt("HOFEntries", 0)+1)
+            apply()
+        }
         resetStudyBuddy(mainPrefs)
     }
 

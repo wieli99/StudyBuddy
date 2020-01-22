@@ -21,20 +21,23 @@ class Stats : AppCompatActivity() {
         val totalMoney = findViewById<TextView>(R.id.statsTotalMoney)
         val averageSessions = findViewById<TextView>(R.id.statsAvgSessionLength)
         val totalItems = findViewById<TextView>(R.id.statsTotalItemsBought)
+        val totalEntries = findViewById<TextView>(R.id.statsTotalHOfEntries)
 
         val prefsMain = getSharedPreferences("Main", 0)
 
-        totalTime.setText((prefsMain.getInt("TotalMoney", 0) * 10 / 60).toString() + getString(R.string.stats_min)) //Calculates time based in money
-        totalSessions.setText((prefsMain.getInt("TotalSessions", 0)).toString() + getString(R.string.stats_sessions))
-        totalMoney.setText((prefsMain.getInt("TotalMoney", 0)).toString() + getString(R.string.money_unit))
-        averageSessions.setText((prefsMain.getInt("TotalMoney", 0) * 10 / 60 / prefsMain.getInt("TotalSessions", 1)).toString() + getString(R.string.stats_min))
-        totalItems.setText((prefsMain.getInt("TotalItems", 0)).toString() + getString(R.string.stats_items))
+        totalTime.setText((prefsMain.getInt("TotalMoney", 0) * 10 / 60).toString() + " " + getString(R.string.stats_min)) //Calculates time based in money
+        totalSessions.setText((prefsMain.getInt("TotalSessions", 0)).toString() + " " + getString(R.string.stats_sessions))
+        totalMoney.setText((prefsMain.getInt("TotalMoney", 0)).toString() + " " + getString(R.string.money_unit))
+        averageSessions.setText((prefsMain.getInt("TotalMoney", 0) * 10 / 60 / prefsMain.getInt("TotalSessions", 1)).toString() + " " + getString(R.string.stats_min))
+        totalItems.setText((prefsMain.getInt("TotalItems", 0)).toString() + " " + getString(R.string.stats_items))
+        totalEntries.setText((prefsMain.getInt("HOFEntries", 0)).toString() + " " + getString(R.string.stats_entries))
 
         Log.i("TotalTime", (prefsMain.getInt("TotalMoney", 0) * 10 / 60).toString() + getString(R.string.stats_min))
         Log.i("TotalSessions", (prefsMain.getInt("TotalSessions", 0)).toString() + getString(R.string.stats_sessions))
         Log.i("TotalMoney", (prefsMain.getInt("TotalMoney", 0)).toString() + getString(R.string.money_unit))
         Log.i("AvgSession", (prefsMain.getInt("TotalMoney", 0) * 10 / 60 / prefsMain.getInt("TotalSessions", 1)).toString() +  getString(R.string.stats_min))
         Log.i("TotalItems", (prefsMain.getInt("TODO", 0) * 10).toString() + getString(R.string.stats_items))
+        Log.i("TotalEntries", (prefsMain.getInt("HOFEntries", 0)).toString() + getString(R.string.stats_entries))
     }
 
     fun setBackground(){

@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">FrontPage</string>
+    <string name="app_name" translatable="false">StudyBuddy</string>
     <string name="restart_button">Restart</string>
     <string name="resume_button">Resume</string>
     <string name="pause_button">Pause</string>
     <string name="purchased">Purchased!</string>
-    <string name="default_money_value">0c</string>
+    <string name="default_money_value" translatable="false">0c</string>
     <string name="start_button">Start</string>
     <string name="studdy_buddy_image_description">An image of the current StudyBuddy</string>
     <string name="shopping_cart_image_description">An image of a shopping cart</string>
@@ -22,19 +22,19 @@
     <string name="buy_pot_button5">buy 400</string>
     <string name="buy_pot_button6">buy 500</string>
     <string name="shop_backgrounds_titel">Shop Backgrounds!</string>
-    <string name="buy_background_button">200</string>
-    <string name="buy_background_button2">250</string>
-    <string name="buy_background_button3">300</string>
-    <string name="buy_background_button4">350</string>
-    <string name="buy_background_button5">400</string>
-    <string name="buy_background_button6">500</string>
+    <string name="buy_background_button" translatable="false">200</string>
+    <string name="buy_background_button2" translatable="false">250</string>
+    <string name="buy_background_button3" translatable="false">300</string>
+    <string name="buy_background_button4" translatable="false">350</string>
+    <string name="buy_background_button5" translatable="false">400</string>
+    <string name="buy_background_button6" translatable="false">500</string>
     <string name="background_image_description">An image of a background</string>
     <string name="save">Save</string>
     <string name="name_setting_title">Name your StuddyBuddy</string>
     <string name="time_setting_title">Set default timer time</string>
     <string name="name_setting_hint">Enter a name...</string>
     <string name="time_setting_hint">Enter a time in minutes...</string>
-    <string name="studdy_buddy_default_name">Frederick</string>
+    <string name="studdy_buddy_default_name" translatable="false">Frederick</string>
     <string name="settings_image_description">An image of a settings wheel</string>
     <string name="settings_title">Settings</string>
     <string name="stats_title">Stats</string>
@@ -43,7 +43,7 @@
     <string name="stats_total_sessions_title">Total sessions completed</string>
     <string name="stats_total_sessions">0 sessions</string>
     <string name="stats_total_money_title">Total money earned</string>
-    <string name="stats_total_money">0c</string>
+    <string name="stats_total_money" translatable="false">0c</string>
     <string name="stats_avg_session_length_title">Average session length</string>
     <string name="stats_avg_session_length">0 min</string>
     <string name="stats_total_items_bought">0 items</string>
@@ -58,9 +58,9 @@
     <string name="select">Select</string>
     <string name="toast_purchase_in_shop">You can purchase this in the shop!</string>
     <string name="hall_of_fame_image_description">An image of a star for the hall of fame</string>
-    <string name="hof_title">Hall Of Fame</string>
+    <string name="hof_title" translatable="false">Hall Of Fame</string>
     <string name="add_to_hof">Add current StudyBuddy</string>
-    <string name="money_unit">c</string>
+    <string name="money_unit" translatable="false">c</string>
     <string name="session_end_text">You should take a short brake now!</string>
     <string name="alert_hof_title">Are you sure you want to move your current StudyBuddy?</string>
     <string name="alert_hof_text">This will reset your StudyBuddy (but you will keep all items)</string>
@@ -74,4 +74,7 @@
     <string name="stats_min">min</string>
     <string name="stats_sessions">sessions</string>
     <string name="stats_items">items</string>
+    <string name="stats_total_hof_entries_title">Hall of fame entries</string>
+    <string name="stats_total_hof_entries">0 entries</string>
+    <string name="stats_entries">entries</string>
 </resources>
