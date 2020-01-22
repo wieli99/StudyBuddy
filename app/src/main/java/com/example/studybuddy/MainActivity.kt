@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity() {
         money = sharedPref.getInt("Money", 0)
 
         //Set correct Money on startup to textView
-        findViewById<TextView>(R.id.moneyMain).setText(sharedPref.getInt("Money", 0).toString() + "c")
+        findViewById<TextView>(R.id.moneyMain).setText(sharedPref.getInt("Money", 0).toString() + getString(
+                    R.string.money_unit))
 
 
         changeScreensListeners()
@@ -51,7 +52,8 @@ class MainActivity : AppCompatActivity() {
         setStudyBuddyName(sharedPref)
         setTimerTime(sharedPref)
         money = sharedPref.getInt("Money", 0)
-        findViewById<TextView>(R.id.moneyMain).setText(sharedPref.getInt("Money", 0).toString() + "c")
+        findViewById<TextView>(R.id.moneyMain).setText(sharedPref.getInt("Money", 0).toString() + getString(
+                    R.string.money_unit))
         setBackground()
         setStudyBuddy(sharedPref)
     }
@@ -151,15 +153,15 @@ class MainActivity : AppCompatActivity() {
             reachedZero = true
             timer.stop()
             btnStart.setText(getString(R.string.start_button))
-            Toast.makeText(this@MainActivity, "You should take a short brake now!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this@MainActivity, getString(R.string.session_end_text), Toast.LENGTH_LONG).show()
 
             //Make entry for statistiks
-            storeTimeForStatistiks(minutes, sharedPref)
+            storeSessionsForStatistiks(sharedPref)
         }
     }
 
 
-    fun storeTimeForStatistiks(minutes: Int, sharedPref: SharedPreferences){
+    fun storeSessionsForStatistiks(sharedPref: SharedPreferences){
         with (sharedPref.edit()) {
             putInt("TotalSessions", sharedPref.getInt("TotalSessions", 0) +1)
             apply()
@@ -177,7 +179,8 @@ class MainActivity : AppCompatActivity() {
 
         Log.i("Money", sharedPref.getInt("Money", 0).toString())
 
-        findViewById<TextView>(R.id.moneyMain).setText(sharedPref.getInt("Money", 0).toString() + "c")
+        findViewById<TextView>(R.id.moneyMain).setText(sharedPref.getInt("Money", 0).toString() + getString(
+                    R.string.money_unit))
     }
 
 

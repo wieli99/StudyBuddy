@@ -1,15 +1,18 @@
 package com.example.studybuddy
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+
 
 class HallOfFame : AppCompatActivity() {
 
@@ -21,14 +24,24 @@ class HallOfFame : AppCompatActivity() {
 
         val hallOfFameBtn = findViewById<Button>(R.id.buttonSaveToHOF)
         hallOfFameBtn.setOnClickListener{
-            saveToHallOfFame()
-            var listView = findViewById<ListView>(R.id.listView)
+            AlertDialog.Builder(this@HallOfFame)
+                .setTitle(getString(R.string.alert_hof_title))
+                .setMessage(getString(R.string.alert_hof_text)) // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton(android.R.string.yes,
+                    DialogInterface.OnClickListener { _, _ ->
+                        saveToHallOfFame()
+                        var listView = findViewById<ListView>(R.id.listView)
 
-            val names = generateNamesArray(this@HallOfFame.getSharedPreferences("HOF", Context.MODE_PRIVATE))
-            val buddys = generateBuddyArray(this@HallOfFame.getSharedPreferences("HOF", Context.MODE_PRIVATE))
+                        val names = generateNamesArray(this@HallOfFame.getSharedPreferences("HOF", Context.MODE_PRIVATE))
+                        val buddys = generateBuddyArray(this@HallOfFame.getSharedPreferences("HOF", Context.MODE_PRIVATE))
 
-            var customAdapter = CustomAdapter(this, names, buddys)
-            listView.adapter = customAdapter
+                        var customAdapter = CustomAdapter(this, names, buddys)
+                        listView.adapter = customAdapter
+                    }) // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show()
         }
 
 
@@ -79,7 +92,7 @@ class HallOfFame : AppCompatActivity() {
         Log.i("HOF Entries", sharedPrefList.toString())
         var names = arrayListOf<String>()
         if (sharedPrefList[0] != ""){
-            for (i in 0 until sharedPrefList!!.size-1){
+            for (i in 0 until sharedPrefList.size-1){
                 Log.i("NameEntry", sharedPrefList[i].split("_")[1])
                 names.add(sharedPrefList[i].split("_")[1])
             }
@@ -96,7 +109,7 @@ class HallOfFame : AppCompatActivity() {
         Log.i("HOF Entries", sharedPrefList.toString())
         var buddysNames = arrayListOf<String>()
         if (sharedPrefList[0] != ""){
-            for (i in 0 until sharedPrefList!!.size-1){
+            for (i in 0 until sharedPrefList.size-1){
                 Log.i("BuddyEntry", sharedPrefList[i].split("_")[0])
                 buddysNames.add(sharedPrefList[i].split("_")[0])
             }

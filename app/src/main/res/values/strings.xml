@@ -60,4 +60,8 @@
     <string name="hall_of_fame_image_description">An image of a star for the hall of fame</string>
     <string name="hof_title">Hall Of Fame</string>
     <string name="add_to_hof">Add current StudyBuddy</string>
+    <string name="money_unit">c</string>
+    <string name="session_end_text">You should take a short brake now!</string>
+    <string name="alert_hof_title">Are you sure you want to move your current StudyBuddy?</string>
+    <string name="alert_hof_text">This will reset your StudyBuddy (but you will keep all items)</string>
 </resources>
