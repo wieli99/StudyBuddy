@@ -55,6 +55,7 @@
         android:id="@+id/nameSetting"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:elevation="6dp"
         android:text="@string/name_setting_title"
         android:textAlignment="center"
@@ -70,7 +71,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:elevation="6dp"
         android:ems="10"
         android:hint="@string/name_setting_hint"
@@ -78,23 +78,9 @@
         android:inputType="textPersonName"
         android:outlineProvider="none"
         android:stateListAnimator="@null"
-        app:layout_constraintBottom_toTopOf="@+id/saveNameSettingsButton"
         app:layout_constraintEnd_toEndOf="@+id/rectangleBackgroundNameSettings"
         app:layout_constraintStart_toStartOf="@+id/rectangleBackgroundNameSettings"
         app:layout_constraintTop_toBottomOf="@+id/nameSetting" />
-
-    <Button
-        android:id="@+id/saveNameSettingsButton"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:background="@drawable/button_selector"
-        android:elevation="5dp"
-        android:stateListAnimator="@null"
-        android:text="@string/save"
-        android:translationZ="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/rectangleBackgroundNameSettings"
-        app:layout_constraintStart_toStartOf="@+id/rectangleBackgroundNameSettings"
-        app:layout_constraintTop_toBottomOf="@+id/rectangleBackgroundNameSettings" />
 
     <View
         android:id="@+id/rectangleBackgroundTimeSettings"
@@ -108,12 +94,13 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline17"
-        app:layout_constraintTop_toBottomOf="@+id/saveNameSettingsButton" />
+        app:layout_constraintTop_toBottomOf="@+id/rectangleBackgroundNameSettings" />
 
     <TextView
         android:id="@+id/timeSetting"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:elevation="6dp"
         android:text="@string/time_setting_title"
         android:textAlignment="center"
@@ -122,38 +109,29 @@
         app:layout_constraintStart_toStartOf="@+id/rectangleBackgroundNameSettings"
         app:layout_constraintTop_toTopOf="@+id/rectangleBackgroundTimeSettings" />
 
-    <EditText
-        android:id="@+id/editTimeText"
+    <TextView
+        android:id="@+id/seekBarValue"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleBackgroundTimeSettings"
+        app:layout_constraintStart_toStartOf="@+id/rectangleBackgroundTimeSettings"
+        app:layout_constraintTop_toBottomOf="@+id/timeSetting" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:elevation="6dp"
-        android:ems="10"
-        android:hint="@string/time_setting_hint"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:outlineProvider="none"
-        android:stateListAnimator="@null"
+        android:max="55"
         app:layout_constraintBottom_toBottomOf="@+id/rectangleBackgroundTimeSettings"
         app:layout_constraintEnd_toEndOf="@+id/rectangleBackgroundTimeSettings"
         app:layout_constraintStart_toStartOf="@+id/rectangleBackgroundTimeSettings"
         app:layout_constraintTop_toBottomOf="@+id/timeSetting" />
-
-    <Button
-        android:id="@+id/saveTimeSettingsButton"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:background="@drawable/button_selector"
-        android:elevation="5dp"
-        android:stateListAnimator="@null"
-        android:text="@string/save"
-        android:translationZ="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/rectangleBackgroundTimeSettings"
-        app:layout_constraintStart_toStartOf="@+id/rectangleBackgroundTimeSettings"
-        app:layout_constraintTop_toBottomOf="@+id/rectangleBackgroundTimeSettings" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline17"
