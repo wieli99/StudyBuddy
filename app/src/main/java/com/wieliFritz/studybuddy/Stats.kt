@@ -27,7 +27,7 @@ class Stats : AppCompatActivity() {
 
         totalTime.setText((prefsMain.getInt("TotalMoney", 0) * 10 / 60).toString() + " " + getString(R.string.stats_min)) //Calculates time based in money
         totalSessions.setText((prefsMain.getInt("TotalSessions", 0)).toString() + " " + getString(R.string.stats_sessions))
-        totalMoney.setText((prefsMain.getInt("TotalMoney", 0)).toString() + " " + getString(R.string.money_unit))
+        totalMoney.setText((prefsMain.getInt("TotalMoney", 0)).toString() + getString(R.string.money_unit))
         averageSessions.setText((prefsMain.getInt("TotalMoney", 0) * 10 / 60 / prefsMain.getInt("TotalSessions", 1)).toString() + " " + getString(R.string.stats_min))
         totalItems.setText((prefsMain.getInt("TotalItems", 0)).toString() + " " + getString(R.string.stats_items))
         totalEntries.setText((prefsMain.getInt("HOFEntries", 0)).toString() + " " + getString(R.string.stats_entries))

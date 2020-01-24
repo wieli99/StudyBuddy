@@ -25,7 +25,7 @@ class ShopBackgrounds : AppCompatActivity() {
         val prefsShopBackgrounds = this@ShopBackgrounds.getSharedPreferences("Backgrounds", Context.MODE_PRIVATE)
 
         //Set Money value
-        findViewById<TextView>(R.id.moneyBackgroundsShop).setText(prefsMain.getInt("Money", 0).toString() + "c")
+        findViewById<TextView>(R.id.moneyBackgroundsShop).setText(prefsMain.getInt("Money", 0).toString() + getString(R.string.money_unit))
 
         setBackground()
 

@@ -10,12 +10,12 @@
     <string name="backgrounds_title">Hintergründe</string>
     <string name="bought_a_background">Hintergrund gekauft!</string>
     <string name="bought_a_pot">Topf gekauft!</string>
-    <string name="buy_pot_button">kaufen 200</string>
-    <string name="buy_pot_button2">kaufen 250</string>
-    <string name="buy_pot_button3">kaufen 300</string>
-    <string name="buy_pot_button4">kaufen 350</string>
-    <string name="buy_pot_button5">kaufen 400</string>
-    <string name="buy_pot_button6">kaufen 500</string>
+    <string name="buy_pot_button">kaufen 200💰</string>
+    <string name="buy_pot_button2">kaufen 250💰</string>
+    <string name="buy_pot_button3">kaufen 300💰</string>
+    <string name="buy_pot_button4">kaufen 350💰</string>
+    <string name="buy_pot_button5">kaufen 400💰</string>
+    <string name="buy_pot_button6">kaufen 500💰</string>
     <string name="hall_of_fame_image_description">Ein Bild eines Sterns für die Hall of Fame</string>
     <string name="is_already_bought">ist bereits gekauft</string>
     <string name="is_not_yet_bought">ist noch nicht erworben</string>
@@ -66,4 +66,10 @@
     <string name="time_setting_hint">Zeit in Minuten</string>
     <string name="time_setting_title">Setze Zeit für Timer</string>
     <string name="toast_purchase_in_shop">Du kannst das im Shop erwerben!</string>
+    <string name="buy_background_button">kaufen 200💰</string>
+    <string name="buy_background_button2">kaufen 250💰</string>
+    <string name="buy_background_button3">kaufen 300💰</string>
+    <string name="buy_background_button4">kaufen 350💰</string>
+    <string name="buy_background_button5">kaufen 400💰</string>
+    <string name="buy_background_button6">kaufen 500💰</string>
 </resources>
