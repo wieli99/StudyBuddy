@@ -3,12 +3,12 @@ package com.wieliFritz.studybuddy
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.os.SystemClock
+import android.os.*
 import android.util.Log
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+
 
 class MainActivity : AppCompatActivity() {
     var reachedZero: Boolean = false
@@ -154,9 +154,20 @@ class MainActivity : AppCompatActivity() {
             timer.stop()
             btnStart.setText(getString(R.string.start_button))
             Toast.makeText(this@MainActivity, getString(R.string.session_end_text), Toast.LENGTH_LONG).show()
-
+            vibratePhone()
             //Make entry for statistiks
             storeSessionsForStatistiks(sharedPref)
+        }
+    }
+
+
+    fun vibratePhone(){
+        val v = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        // Vibrate for 500 milliseconds
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE))
+        } else { //deprecated for API 26
+            v.vibrate(500)
         }
     }
 

@@ -55,7 +55,7 @@ class Settings : AppCompatActivity() {
         val prefs = getSharedPreferences("Main", 0)
         current = prefs.getInt("Time", 25)
 
-        seekBar.setProgress(current)
+        seekBar.setProgress(current - 5)
         seekBarValue.setText(current.toString() + getString(R.string.stats_min))
 
         seekBar.setOnSeekBarChangeListener(object :
