@@ -3,7 +3,7 @@ A game that motivates you to study
 
 ![alt text][logo]
 
-[logo]: https://github.com/wieli99/StudyBuddy/blob/master/app/src/main/res/drawable-v24/study_buddy_icon.png "Icon of StudyBuddy"
+[logo]: ./app/src/main/res/drawable-v24/study_buddy_icon.png "Icon of StudyBuddy"
 
 
 
@@ -13,7 +13,7 @@ By Nina Fritz & Florian Wieland
 
 Version 1.1
 
-Google Play Link: https://play.google.com/store/apps/details?id=com.wieliFritz.studybuddy
+View in [Google Play](https://play.google.com/store/apps/details?id=com.wieliFritz.studybuddy) Store
 
 Required Software: Android Nougat (7) or higher
 
@@ -24,7 +24,7 @@ StudyBuddy is an Android exclusive App that aims to motivate Students to Study. 
 
 This App is completely custom-coded in Kotlin. Every asset used in this App is either custom-designed or DRM-free.
 
-<img src="https://github.com/wieli99/StudyBuddy/blob/master/README_images/Screenshot_20200204-182435.png" width="200" height="400" />
+<img src="./README_images/Screenshot_20200204-182435.png" width="200" height="400" />
 
 
 ### Timer
@@ -38,15 +38,15 @@ The StudyBuddy character is a digital pet which can be personalized by the playe
 ### Shop
 Players can buy pots and backgrounds in the shop. The items can be bought using the in-game currency which can be gained with tracked study-time from the timer - which will grant 1 coin every ten seconds.
 
-<img src="https://github.com/wieli99/StudyBuddy/blob/master/README_images/Screenshot_20200204-182446.png" width="200" height="400" />
+<img src="./README_images/Screenshot_20200204-182446.png" width="200" height="400" />
 
 Pots are the 'houses' of StudyBuddies and once purchased can be equipped to every StudyBuddy, no matter the stage of evolution or name. There are a total of six pots to choose from.
 
-<img src="https://github.com/wieli99/StudyBuddy/blob/master/README_images/Screenshot_20200204-182457.png" width="200" height="400" />
+<img src="./README_images/Screenshot_20200204-182457.png" width="200" height="400" />
 
 Backgrounds, once purchased, can change the Background of every Screen in the App when equipped. There are a total of six backgrounds to choose from.
 
-<img src="https://github.com/wieli99/StudyBuddy/blob/master/README_images/Screenshot_20200204-182450.png" width="200" height="400" />
+<img src="./README_images/Screenshot_20200204-182450.png" width="200" height="400" />
 
 Pots and backgrounds will stay purchased even when a StudyBuddy is moved to the Hall Of Fame. 
 
@@ -57,7 +57,7 @@ The Hall Of Fame aims to offer an unlimited objective for the player, as once th
 Of course the current StudyBudddy wil not be lost, but forever memorized in the Hall Of Fame along with its name and active pot. The Hall Of Fame is accessible from minute one, meaning that even StudyBuddies that haven't evolved can be moved into the Hall Of Fame
 
 
-<img src="https://github.com/wieli99/StudyBuddy/blob/master/README_images/Screenshot_20200204-182507.png" width="200" height="400" />
+<img src="./README_images/Screenshot_20200204-182507.png" width="200" height="400" />
 
 
 ### Settings
@@ -65,7 +65,7 @@ In the settings Page, players can currently do two things:
 - Rename the active StudyBuddy to a custom String
 - Change the Timer time to a value (in minutes) between 5 and 60 Minutes
 
-<img src="https://github.com/wieli99/StudyBuddy/blob/master/README_images/Screenshot_20200204-182513.png" width="200" height="400" />
+<img src="./README_images/Screenshot_20200204-182513.png" width="200" height="400" />
 
 
 ### Stats
@@ -77,7 +77,7 @@ The Stats Page displays the following statistiks for the player:
 - Items bought
 - Hall Of Fame Entries
 
-<img src="https://github.com/wieli99/StudyBuddy/blob/master/README_images/Screenshot_20200204-182440.png" width="200" height="400" />
+<img src="./README_images/Screenshot_20200204-182440.png" width="200" height="400" />
 
 
 ### Supported Languages
@@ -97,14 +97,14 @@ The following languages were translated by hand
 
 
 # Installation
-To install this App on an Android Smartphone go the following link and click install: https://play.google.com/store/apps/details?id=com.wieliFritz.studybuddy
+To install this App on an Android Smartphone go the following link and click install: <https://play.google.com/store/apps/details?id=com.wieliFritz.studybuddy>
 
 Please note that an Android Version of 7 or higher is required to run this App.
 
 
 
 # Contribute
-Feel free to contribute to this app if you like. To do this we recommend using Android Studio which can be downloaded for free here: https://developer.android.com/studio
+Feel free to contribute to this app if you like. To do this we recommend using Android Studio which can be downloaded for free here: <https://developer.android.com/studio>
 Please make sure to not violate any copyright when adding assets or other external ressources
 
 
@@ -124,9 +124,9 @@ The following will be fututre additions to make the game even more interesting a
 
 
 # Privacy
-https://github.com/wieli99/StudyBuddy/blob/master/privacy.md
+<https://github.com/wieli99/StudyBuddy/blob/master/privacy.md>
 
 
 
 # License
-https://github.com/wieli99/StudyBuddy/blob/master/License
+<https://github.com/wieli99/StudyBuddy/blob/master/License>
